@@ -6,3 +6,11 @@
 image {
   max-width: 100%;
 }
+
+html {
+  background-color: var(--bg-color);
+}
+
+:root {
+  --bg-color: #040f14;
+}
