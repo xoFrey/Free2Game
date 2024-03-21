@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./Details.css";
 
 const Details = () => {
-  // --- useState
-  const [singleGame, setSingleGame] = useState([]);
+  // ---useState
+  const [singleGame, setSingleGame] = useState(null);
 
   // ---fetch
   useEffect(() => {
@@ -12,10 +12,18 @@ const Details = () => {
       .then((fetchData) => setSingleGame(fetchData))
       .catch((err) => console.error("fetch error at detailpage", err));
   }, []);
-
+  console.log(singleGame);
+  console.log(singleGame?.screenshots[0]?.image);
   return (
     <section className="details">
-      <h2>Details</h2>
+      {singleGame ? (
+        <>
+          <img src={singleGame.screenshots[0].image} alt="" />
+          <h2>{singleGame.title}</h2>
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
     </section>
   );
 };

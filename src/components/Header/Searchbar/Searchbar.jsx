@@ -1,8 +1,9 @@
 import "./Searchbar.css";
+import Burgermenu from "./../../../assets/svg/Burgermenu";
 const Searchbar = () => {
   return (
     <section className="searchbar">
-      <h2>Searchbar</h2>
+      <img src="/public/img/LogoGames.svg" alt="" />
     </section>
   );
 };
