@@ -6,7 +6,9 @@ import RecentlyComponent from "../../components/RecentlyComponent/RecentlyCompon
 const Home = () => {
   return (
     <section className="home">
-      <h2>home</h2>
+      <section className="home_title">
+        <h1>Find & track the best free-to-play games!</h1>
+      </section>
       <RecentlyComponent />
       <TopGamesPC />
       <TopGamesBrowser />
