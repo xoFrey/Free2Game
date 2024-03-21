@@ -1,0 +1,22 @@
+.card-vertical {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background-color: var(--card-bg-blue);
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-vertical img {
+  border-radius: 1.5rem;
+}
+
+.tags-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
