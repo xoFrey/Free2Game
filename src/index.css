@@ -8,5 +8,9 @@ image {
 }
 
 html {
-  background-color: black;
+  background-color: var(--bg-color);
+}
+
+:root {
+  --bg-color: #040f14;
 }
