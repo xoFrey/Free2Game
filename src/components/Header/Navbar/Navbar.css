@@ -1,3 +1,16 @@
-nav a {
-  padding: 2vw;
+.navbar {
+  background-color: rgb(152, 209, 255);
+}
+
+.navbar svg {
+  cursor: pointer;
+}
+
+nav {
+  display: none;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
 }
