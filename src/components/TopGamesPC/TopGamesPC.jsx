@@ -1,3 +1,4 @@
+import "./TopGamesPC.css";
 const TopGamesPC = () => {
   return (
     <section className="top-games-pc">

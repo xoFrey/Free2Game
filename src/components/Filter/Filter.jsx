@@ -1,3 +1,4 @@
+import "./Filter.css";
 const Filter = () => {
   return (
     <section className="filter">

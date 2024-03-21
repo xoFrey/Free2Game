@@ -1,3 +1,4 @@
+import "./Searchbar.css";
 const Searchbar = () => {
   return (
     <section className="searchbar">
