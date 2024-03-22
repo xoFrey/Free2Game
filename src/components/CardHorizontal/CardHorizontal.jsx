@@ -1,8 +1,24 @@
+import { Link } from "react-router-dom";
 import "./CardHorizontal.css";
-const CardHorizontal = () => {
+import TopCard from "../TopCard/TopCard";
+import TopGamesRank from "../TopGamesPC/TopGamesRank";
+const CardHorizontal = ({ imgURL, gameTitle, tags, id, rankIndex }) => {
   return (
     <section className="card-horizontal">
-      <h2>CardHorizontal</h2>
+      <img src={imgURL} alt={gameTitle} />
+      <div className="card-horizontal-rank-wrapper">
+        <TopGamesRank rank={rankIndex} />
+      </div>
+      <div className="card-horizontal-content">
+        <h3>{gameTitle}</h3>
+
+        <Link to={id}>
+          <button type="button" className="solid-button">
+            Read More
+          </button>
+        </Link>
+        <span className="card-tags">{tags}</span>
+      </div>
     </section>
   );
 };
