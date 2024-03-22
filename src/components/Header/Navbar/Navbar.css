@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 4;
 }
 
 .navbar svg {
@@ -31,6 +32,10 @@
 
 nav {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
 }
 
 .active svg {

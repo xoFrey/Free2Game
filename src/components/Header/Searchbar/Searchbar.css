@@ -2,5 +2,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 95vw;
+  padding: 12px 2vw;
+}
+
+.searchbar div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.searchbar div h2 {
+  text-transform: uppercase;
+}
+
+#search {
+  border-radius: 12px;
+  padding: 13px 20px;
+  width: 277px;
+  border-style: none;
+  background-color: var(--darkBlue);
+  color: var(--font-white);
+}
+
+#search:focus {
+  outline: none;
+}
+
+.user-input {
+  position: relative;
+}
+
+.user-input svg {
+  position: absolute;
+  right: 10px;
 }
