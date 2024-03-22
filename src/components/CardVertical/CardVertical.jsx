@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import "./CardVertical.css";
-const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags }) => {
+const CardVertical = ({
+  thumbnail,
+  gameTitle,
+  shortDescription,
+  link,
+  tags,
+}) => {
   // const CardVertical = ({ titel, year, descrption }) => {
   return (
     <section className="card-vertical">
@@ -11,7 +17,7 @@ const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags }) =>
         <Link to="/allgames">
           <button className="solid-button">Read more</button>
         </Link>
-        <hr />
+
         <div className="tags-flex">
           <span className="card-tags">{tags}</span>
         </div>
