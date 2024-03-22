@@ -4,9 +4,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-bottom: 6rem;
 }
-
-h1 {
-  font-size: 3rem;
-  
+.home_title h1 {
+  width: 20ch;
+  padding-top: 20.625rem;
+  padding-left: 5rem;
 }

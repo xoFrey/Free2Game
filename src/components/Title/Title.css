@@ -1,0 +1,16 @@
+.title-compo img {
+  height: 36.4375rem;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 6rem;
+  position: relative;
+  border-radius: 2.1875rem;
+}
+
+.title-compo h1 {
+  width: 20ch;
+
+  position: absolute;
+  bottom: 15.5rem;
+  left: 5rem; /
+}
