@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import "./TopCard.css";
-const TopCard = ({ gameTitle, link, tags }) => {
+import TopGamesRank from "../TopGamesPC/TopGamesRank";
+const TopCard = ({ gameTitle, id, tags, imgURL }) => {
   document.style;
   return (
-    <section className="top-card">
-      <h2>{gameTitle}</h2>
-      <Link to={link}>
+    <section className="top-card-content">
+      <div className="top-card-rank-wrapper">
+        <TopGamesRank rank="1" />
+      </div>
+      <h1>{gameTitle}</h1>
+      <Link to={id}>
         <button type="button" className="solid-button">
           Read More
         </button>
