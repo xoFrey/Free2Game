@@ -1,7 +1,6 @@
-const ArrowIcon = ({ setDropDown }) => {
+const ArrowIcon = () => {
   return (
     <svg
-      onClick={setDropDown}
       width="12"
       height="27"
       viewBox="0 0 12 27"
