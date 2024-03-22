@@ -7,7 +7,10 @@ import CardVertical from "../../components/CardVertical/CardVertical";
 const Home = () => {
   return (
     <section className="home">
-      <h1>Home</h1>
+      <h2>home</h2>
+      <section className="home_title">
+        <h1>Find & track the best free-to-play games!</h1>
+      </section>
       <CardVertical
         thumbnail="https://www.freetogame.com/g/540/thumbnail.jpg"
         gameTitle="Overwatch 2"

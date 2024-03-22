@@ -1,3 +1,4 @@
+import Title from "../../components/Title/Title";
 import { useEffect, useState } from "react";
 import "./Details.css";
 
@@ -21,6 +22,10 @@ const Details = () => {
   // ========== RENDERING ==========
   return (
     <section className="details">
+
+      <h2>Details</h2>
+      <Title />
+
       {singleGame ? (
         <>
           <img src={singleGame.screenshots[0].image} alt="" />

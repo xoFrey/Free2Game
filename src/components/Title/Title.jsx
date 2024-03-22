@@ -1,8 +1,9 @@
 import "./Title.css";
-const Title = () => {
+const Title = ({ url, title }) => {
   return (
-    <section>
-      <h1>Title</h1>
+    <section className="title-compo">
+      <img src={url} alt="" />
+      <h1>{title}</h1>
     </section>
   );
 };
