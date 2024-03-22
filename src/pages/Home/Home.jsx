@@ -10,15 +10,11 @@ const Home = () => {
       <section className="home_title">
         <h1>Find & track the best free-to-play games!</h1>
       </section>
-      <CardVertical
-        thumbnail="https://www.freetogame.com/g/540/thumbnail.jpg"
-        gameTitle="Overwatch 2"
-        shortDescription="Eine kurze beschreibung des Spiels"
-        tags="shooter"
-      />
-      <RecentlyComponent />
-      <TopGamesPC />
-      <TopGamesBrowser />
+      <div className="home-wrapper">
+        <RecentlyComponent />
+        <TopGamesPC />
+        <TopGamesBrowser />
+      </div>
     </section>
   );
 };

@@ -3,7 +3,8 @@ import Filter from "./../../components/Filter/Filter";
 import CardVertical from "./../../components/CardVertical/CardVertical";
 import Title from "../../components/Title/Title";
 import { useEffect, useState } from "react";
-import { json } from "react-router-dom";
+import allGamesImage from "../../../public/img/allGames.jpg";
+
 
 const AllGames = () => {
   const [games, setGames] = useState("");
@@ -18,6 +19,9 @@ const AllGames = () => {
   return (
     <section className="all-games">
       <Title url="../../../public/img/allGames.jpg" title="All Games" />
+      <h2>All Games</h2>
+
+      <Title backgroundImage={allGamesImage} title={"All Games"} />
       <Filter />
       {games ? (
         <div className="allgames-cards">

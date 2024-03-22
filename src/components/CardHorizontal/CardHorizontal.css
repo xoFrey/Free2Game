@@ -1,4 +1,29 @@
 .card-horizontal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background-color: var(--card-bg-blue);
   border-radius: 1.5rem;
+  overflow: hidden;
+  height: 22vh;
+}
+
+.card-horizontal-rank-wrapper {
+  position: relative;
+  top: -35%;
+  left: -47%;
+}
+
+.card-horizontal-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2.25rem;
+}
+
+.card-horizontal img {
+  border-radius: 1.5rem;
+  height: 100%;
+  max-width: 50%;
+  object-fit: cover;
+  object-position: center;
 }
