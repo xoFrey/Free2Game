@@ -1,0 +1,16 @@
+.top-games-pc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 2rem;
+}
+.top-games-pc-flex-bigCard {
+  display: flex;
+}
+
+.top-games-pc-flex-vertCards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

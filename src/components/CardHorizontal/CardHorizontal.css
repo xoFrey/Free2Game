@@ -1,0 +1,4 @@
+.card-horizontal {
+  background-color: var(--card-bg-blue);
+  border-radius: 1.5rem;
+}

@@ -1,0 +1,7 @@
+.top-card {
+  background-color: var(--card-bg-blue);
+  width: 40%;
+  height: 80vh;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
