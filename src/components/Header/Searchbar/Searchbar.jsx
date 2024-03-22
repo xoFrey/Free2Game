@@ -1,10 +1,17 @@
+import Logo from "../../../assets/svg/Logo";
 import "./Searchbar.css";
-import Burgermenu from "./../../../assets/svg/Burgermenu";
+import SearchIcon from "./../../../assets/svg/SearchIcon";
 const Searchbar = () => {
   return (
     <section className="searchbar">
-      <img src="/public/img/LogoGames.svg" alt="" />
-      <input type="text" name="search" id="search" />
+      <div>
+        <Logo />
+        <h2>Free2Game</h2>
+      </div>
+      <div className="user-input">
+        <SearchIcon />
+        <input type="text" name="search" id="search" placeholder="" />
+      </div>
     </section>
   );
 };
