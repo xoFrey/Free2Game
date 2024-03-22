@@ -22,7 +22,6 @@ const Details = () => {
   // ========== RENDERING ==========
   return (
     <section className="details">
-
       <h2>Details</h2>
       <Title />
 
