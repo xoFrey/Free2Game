@@ -4,7 +4,6 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
-      {" "}
       <Navbar />
       <Searchbar />
     </header>
