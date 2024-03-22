@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 import "./CardVertical.css";
-const CardVertical = ({
-  thumbnail,
-  gameTitle,
-  shortDescription,
-  link,
-  tags,
-}) => {
-  // const CardVertical = ({ titel, year, descrption }) => {
+const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, platform }) => {
   return (
     <section className="card-vertical">
       <img src={thumbnail} alt={gameTitle} />
@@ -19,7 +12,12 @@ const CardVertical = ({
         </Link>
 
         <div className="tags-flex">
-          <span className="card-tags">{tags}</span>
+          <a href="#" className="card-tags">
+            {tags}
+          </a>
+          <a href="#" className="card-tags">
+            {platform}
+          </a>
         </div>
       </div>
     </section>

@@ -1,10 +1,13 @@
 import "./Title.css";
-const Title = ({ url, title }) => {
+const Title = ({ backgroundImage,title }) => {
   return (
-    <section className="title-compo">
-      <img src={url} alt="" />
-      <h1>{title}</h1>
-    </section>
+    <section
+      className="allGames-title"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}>
+        <h1>{title}</h1>
+      </section>
   );
 };
 
