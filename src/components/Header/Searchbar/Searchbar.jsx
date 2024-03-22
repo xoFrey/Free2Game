@@ -4,6 +4,7 @@ const Searchbar = () => {
   return (
     <section className="searchbar">
       <img src="/public/img/LogoGames.svg" alt="" />
+      <input type="text" name="search" id="search" />
     </section>
   );
 };

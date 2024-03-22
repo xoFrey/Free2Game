@@ -1,10 +1,7 @@
-import { useState } from "react";
-
-const Burgermenu = () => {
-  const [fold, setFold] = useState(false);
+const Burgermenu = ({ setFold }) => {
   return (
     <svg
-      onClick={() => setFold((fold) => !fold)}
+      onClick={setFold}
       width="74"
       height="74"
       viewBox="0 0 74 74"
