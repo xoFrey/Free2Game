@@ -1,12 +1,21 @@
-.top-games-pc {
+.pc {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   width: 100%;
+}
+
+.top-component-pc-flex {
+  display: flex;
   gap: 2rem;
 }
-.top-games-pc-flex-bigCard {
+
+.top-card {
+  background-color: var(--card-bg-blue);
+  width: 40%;
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;
   display: flex;
+  flex-direction: column;
 }
 
 .top-games-pc-flex-vertCards {
