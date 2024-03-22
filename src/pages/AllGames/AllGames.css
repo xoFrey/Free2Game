@@ -1,0 +1,15 @@
+.all-games {
+  padding-top: 50px;
+}
+
+.allgames-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.single-cards {
+  width: 300px;
+}

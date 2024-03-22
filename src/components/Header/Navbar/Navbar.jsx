@@ -12,10 +12,10 @@ const Navbar = () => {
   return (
     <section className="navbar">
       <div className={`burger ${fold ? "hide" : "show"}`}>
-        <Burgermenu setFold={() => setFold((fold) => !fold)} fold={fold} />{" "}
+        <Burgermenu setFold={() => setFold((fold) => !fold)} />
       </div>
       <div className={`exit ${fold ? "show" : "hide"}`}>
-        <ExitButton setFold={() => setFold((fold) => !fold)} fold={fold} />
+        <ExitButton setFold={() => setFold((fold) => !fold)} />
       </div>
       <nav>
         <NavLink to="/">

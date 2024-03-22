@@ -1,0 +1,21 @@
+.platform {
+  max-width: 285px;
+  background-color: var(--accent-color-magenta);
+  border-radius: 0.75rem;
+  padding: 12px 24px;
+  margin-bottom: 20px;
+}
+
+.drop-down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drop-down h3 {
+  text-transform: uppercase;
+}
+
+.drop-down svg {
+  cursor: pointer;
+}
