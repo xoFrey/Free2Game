@@ -57,7 +57,8 @@ nav {
 
 /* :Hide and Show when clicked */
 .hide {
-  display: none;
+  width: 0px;
+  overflow: hidden;
 }
 
 .show {

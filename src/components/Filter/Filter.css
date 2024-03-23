@@ -1,21 +1,128 @@
-.platform {
-  max-width: 285px;
-  background-color: var(--accent-color-magenta);
-  border-radius: 0.75rem;
-  padding: 12px 24px;
-  margin-bottom: 20px;
+.hauptfilter {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-left: 100px;
+  gap: 20px;
 }
 
-.drop-down {
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 285px;
+}
+/* :filter headline */
+.filter-headline {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--accent-color-magenta);
+  padding: 12px 24px;
+  border-radius: 12px;
+  z-index: 2;
+  overflow: hidden;
 }
 
-.drop-down h3 {
+.filter-headline h3 {
   text-transform: uppercase;
+  font-weight: 700;
 }
 
-.drop-down svg {
+.filter svg {
+  cursor: pointer;
+}
+
+.arrowUp {
+  transform: rotateZ(180deg);
+}
+
+/* : when filter is open */
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: scroll;
+  background-color: var(--card-bg-blue);
+  transition: 1s;
+  margin-top: -20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 0px 0px 12px 12px;
+  margin-right: 2px;
+  padding-left: 5px;
+}
+
+/* :Scrollbar */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lightBlue);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--darkBlue);
+}
+
+.is-closed {
+  max-height: 0px;
+  visibility: hidden;
+}
+.is-open {
+  max-height: 250px;
+}
+
+/* : filter items */
+
+.filter-items {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--darkBlue);
+  padding: 12px 24px;
+  margin-inline: 10px;
+  border-radius: 12px;
+}
+
+.filter-items h3 {
+  text-transform: capitalize;
+}
+
+.filter-list div:nth-of-type(1) {
+  margin-top: 18px;
+}
+.filter-list div:last-of-type {
+  margin-bottom: 20px;
+}
+
+/* : show-filter */
+
+.show-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.show-filter p {
+  font-family: Oswald, sans-serif;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.show-filter div {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--accent-color-magenta);
+  padding: 6px 12px;
+  border-radius: 12px;
+  gap: 12px;
   cursor: pointer;
 }

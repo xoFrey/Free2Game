@@ -5,8 +5,8 @@ import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 import Details from "./pages/Details/Details";
 import "./App.css";
 
-import Navbar from "./components/Header/Navbar/Navbar";
-import Searchbar from "./components/Header/Searchbar/Searchbar";
+import Navbar from "./components/Navbar/Navbar";
+import Searchbar from "./components/Searchbar/Searchbar";
 
 function App() {
   return (

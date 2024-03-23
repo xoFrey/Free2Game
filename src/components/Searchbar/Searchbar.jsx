@@ -1,6 +1,6 @@
-import Logo from "../../../assets/svg/Logo";
 import "./Searchbar.css";
-import SearchIcon from "./../../../assets/svg/SearchIcon";
+import Logo from "./../../assets/svg/Logo";
+import SearchIcon from "./../../assets/svg/SearchIcon";
 const Searchbar = () => {
   return (
     <section className="searchbar">
