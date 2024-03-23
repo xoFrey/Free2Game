@@ -4,13 +4,17 @@ import AllGames from "./pages/AllGames/AllGames";
 import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 import Details from "./pages/Details/Details";
 import "./App.css";
-import Header from "./components/Header/Header/Header";
+
+import Navbar from "./components/Header/Navbar/Navbar";
+import Searchbar from "./components/Header/Searchbar/Searchbar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Navbar />
+        <Searchbar />
+
         <div className="app">
           <Routes>
             <Route path="/" element={<Home />} />
