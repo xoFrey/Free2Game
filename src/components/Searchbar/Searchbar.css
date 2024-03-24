@@ -4,13 +4,16 @@
   align-items: center;
   width: 95vw;
   padding: 12px 2vw;
+  padding-left: 60px;
+  position: fixed;
+  right: 0;
 }
 
 .searchbar div {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .searchbar div h2 {
@@ -37,4 +40,8 @@
 .user-input svg {
   position: absolute;
   right: 10px;
+}
+
+.slide {
+  margin-left: 260px;
 }

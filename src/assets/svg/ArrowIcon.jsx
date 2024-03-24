@@ -1,7 +1,8 @@
-const ArrowIcon = ({ setDrop }) => {
+const ArrowIcon = ({ setIsOpen, className }) => {
   return (
     <svg
-      onClick={setDrop}
+      className={className}
+      onClick={setIsOpen}
       width="12"
       height="27"
       viewBox="0 0 12 27"
