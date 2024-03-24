@@ -12,6 +12,7 @@ const Navbar = () => {
   const [fold, setFold] = useState(false);
   return (
     <>
+      <Searchbar fold={fold} />
       <section className="navbar">
         <div className={`burger ${fold ? "hide" : "show"}`}>
           <Burgermenu setFold={() => setFold((fold) => !fold)} />

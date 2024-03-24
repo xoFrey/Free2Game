@@ -1,23 +1,21 @@
 import "./Filter.css";
 import ArrowIcon from "./../../assets/svg/ArrowIcon";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CheckboxEmpty from "../../assets/svg/CheckboxEmpty";
 import CheckboxChecked from "./../../assets/svg/CheckboxChecked";
-import ExitButton from "../../assets/svg/ExitButton";
 import XButton from "../../assets/svg/XButton";
+import { GenreValue, PlatformValue, SortByValue } from "../Context/Context";
 const Filter = ({ allGames }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const [filterValue, setFilterValue] = useState("");
 
-  const [platformValue, setPlatformValue] = useState(false);
-  const [genreValue, setGenreValue] = useState(false);
-  const [sortByValue, setSortByValue] = useState(false);
+  const { platformValue, setPlatformValue } = useContext(PlatformValue);
+  const { genreValue, setGenreValue } = useContext(GenreValue);
+  const { sortByValue, setSortByValue } = useContext(SortByValue);
 
   const [genreList, setGenreList] = useState([]);
-
   let genreArray = [];
-
   let platformArray = ["all", "pc", "browser"];
   let sortByArray = ["release-date", "popularity", "alphabetical", "relevance"];
 
@@ -53,8 +51,9 @@ const Filter = ({ allGames }) => {
               isOpen && filterValue == "platform" ? "is-open" : "is-closed"
             }`}
           >
-            {platformArray.map((item) => (
+            {platformArray.map((item, index) => (
               <div
+                key={index}
                 onClick={() => {
                   setPlatformValue(`${item}`), setIsOpen(!isOpen);
                 }}
@@ -88,8 +87,9 @@ const Filter = ({ allGames }) => {
               isOpen && filterValue === "genre" ? "is-open" : "is-closed"
             }`}
           >
-            {genreList.map((item) => (
+            {genreList.map((item, index) => (
               <div
+                key={index}
                 onClick={() => {
                   setGenreValue(`${item}`), setIsOpen(!isOpen);
                 }}
@@ -123,8 +123,9 @@ const Filter = ({ allGames }) => {
               isOpen && filterValue === "sort-by" ? "is-open" : "is-closed"
             }`}
           >
-            {sortByArray.map((item) => (
+            {sortByArray.map((item, index) => (
               <div
+                key={index}
                 onClick={() => {
                   setSortByValue(`${item}`), setIsOpen(!isOpen);
                 }}

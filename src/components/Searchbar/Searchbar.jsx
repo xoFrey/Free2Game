@@ -1,16 +1,28 @@
 import "./Searchbar.css";
 import Logo from "./../../assets/svg/Logo";
 import SearchIcon from "./../../assets/svg/SearchIcon";
-const Searchbar = () => {
+import { useContext } from "react";
+import { UserInput } from "../Context/Context";
+const Searchbar = ({ fold }) => {
+  const { userInput, setUserInput } = useContext(UserInput);
+
+  console.log(userInput);
   return (
     <section className="searchbar">
-      <div>
+      <div className={fold ? "slide" : ""}>
         <Logo />
         <h2>Free2Game</h2>
       </div>
       <div className="user-input">
         <SearchIcon />
-        <input type="text" name="search" id="search" placeholder="" />
+        <input
+          onChange={(e) => setUserInput(e.target.value)}
+          value={userInput}
+          type="text"
+          name="search"
+          id="search"
+          placeholder=""
+        />
       </div>
     </section>
   );

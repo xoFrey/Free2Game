@@ -7,7 +7,6 @@
   padding-left: 60px;
   position: fixed;
   right: 0;
-  /* z-index: 4; */
 }
 
 .searchbar div {
@@ -41,4 +40,8 @@
 .user-input svg {
   position: absolute;
   right: 10px;
+}
+
+.slide {
+  margin-left: 260px;
 }
