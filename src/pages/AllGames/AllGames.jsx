@@ -33,14 +33,15 @@ const AllGames = () => {
   }, [platformValue, genreValue, sortByValue]);
 
   useEffect(() => {
-    const filtered = allGames.filter((item) =>
-      item.title.toLowerCase().includes(userInput.toLowerCase())
-    );
+    const filtered = allGames.filter((item) => item.title.includes(userInput));
     setSearchedGames(filtered);
   }, [allGames, userInput]);
 
+  console.log(searchedGames);
+
   return (
     <section className="all-games">
+      {/* <Title url="../../../public/img/allGames.jpg" title="All Games" /> */}
       <Title backgroundImage={allGamesImage} title={"All Games"} />
       <Filter allGames={allGames} />
       {allGames && userInput === "" ? (

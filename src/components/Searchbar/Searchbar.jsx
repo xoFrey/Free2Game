@@ -6,7 +6,6 @@ import { UserInput } from "../Context/Context";
 const Searchbar = ({ fold }) => {
   const { userInput, setUserInput } = useContext(UserInput);
 
-  console.log(userInput);
   return (
     <section className="searchbar">
       <div className={fold ? "slide" : ""}>
