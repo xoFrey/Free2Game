@@ -10,6 +10,7 @@ import {
   UserInput,
 } from "../../components/Context/Context";
 import { SortByValue } from "./../../components/Context/Context";
+import { Link } from "react-router-dom";
 
 const AllGames = () => {
   const [allGames, setAllGames] = useState([]);
@@ -17,7 +18,7 @@ const AllGames = () => {
   const { platformValue } = useContext(PlatformValue);
   const { genreValue } = useContext(GenreValue);
   const { sortByValue } = useContext(SortByValue);
-  const { userInput } = useContext(UserInput);
+  const { userInput, setUserInput } = useContext(UserInput);
 
   useEffect(() => {
     fetch(
@@ -33,43 +34,68 @@ const AllGames = () => {
   }, [platformValue, genreValue, sortByValue]);
 
   useEffect(() => {
-    const filtered = allGames.filter((item) => item.title.includes(userInput));
+    const filtered = allGames.filter((item) =>
+      item.title.toLowerCase().includes(userInput.toLowerCase())
+    );
     setSearchedGames(filtered);
   }, [allGames, userInput]);
 
-  console.log(searchedGames);
+  const [genreArray, setGenreArray] = useState(genreValue);
+  useEffect(() => {
+    setGenreArray([...genreArray, genreValue]);
+  }, [genreValue]);
+
+  console.log(genreArray);
 
   return (
-    <section className="all-games">
-      {/* <Title url="../../../public/img/allGames.jpg" title="All Games" /> */}
-      <Title backgroundImage={allGamesImage} title={"All Games"} />
-      <Filter allGames={allGames} />
-      {allGames && userInput === "" ? (
-        <div className="allgames-cards">
-          {allGames.map((item, index) => (
-            <div className="single-cards" key={index}>
-              <CardVertical
-                thumbnail={item.thumbnail}
-                gameTitle={item.title}
-                tags={item.genre}
-              />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="allgames-cards">
+    <>
+      <section className="all-games">
+        <Title backgroundImage={allGamesImage} title={"All Games"} />
+        <Filter allGames={allGames} />
+        {allGames && userInput === "" ? (
+          <div className="allgames-cards">
+            {allGames.map((item, index) => (
+              <div className="single-cards" key={index}>
+                <CardVertical
+                  thumbnail={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="allgames-cards">
+            {searchedGames.map((item) => (
+              <div className="single-cards">
+                <CardVertical
+                  thumbnail={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+      {userInput != "" ? (
+        <section className="suggestion">
           {searchedGames.map((item) => (
-            <div className="single-cards">
-              <CardVertical
-                thumbnail={item.thumbnail}
-                gameTitle={item.title}
-                tags={item.genre}
-              />
-            </div>
+            <Link to={`/details/${item.id}`}>
+              <div
+                onClick={() => setUserInput("")}
+                className="suggestion-items"
+              >
+                <img src={item.thumbnail} alt="" />
+                <h3>{item.title}</h3>
+              </div>
+            </Link>
           ))}
-        </div>
+        </section>
+      ) : (
+        " "
       )}
-    </section>
+    </>
   );
 };
 

@@ -21,6 +21,7 @@ const Searchbar = ({ fold }) => {
           name="search"
           id="search"
           placeholder=""
+          autoComplete="off"
         />
       </div>
     </section>

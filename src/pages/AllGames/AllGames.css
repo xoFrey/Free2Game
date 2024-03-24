@@ -13,3 +13,28 @@
 .single-cards {
   width: 300px;
 }
+
+/* : search suggestions */
+
+.suggestion {
+  position: fixed;
+  right: 20px;
+  top: 50px;
+  overflow-y: scroll;
+  height: 300px;
+  width: 300px;
+  background-color: var(--card-bg-blue);
+}
+
+.suggestion-items {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 5px;
+  background-color: var(--darkBlue);
+  border-radius: 12px;
+}
+
+.suggestion-items img {
+  max-width: 50px;
+}

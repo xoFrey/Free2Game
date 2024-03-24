@@ -19,7 +19,6 @@ const Filter = ({ allGames }) => {
   let platformArray = ["all", "pc", "browser"];
   let sortByArray = ["release-date", "popularity", "alphabetical", "relevance"];
 
-  const [test, setTest] = useState([]);
   useEffect(() => {
     allGames
       ? allGames.map((item) => {
