@@ -1,5 +1,10 @@
-.recently-component {
+.recently-component-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 24px;
+}
+
+.recently-component {
+  display: flex;
+  flex-direction: column;
 }

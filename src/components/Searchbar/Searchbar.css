@@ -20,6 +20,12 @@
   text-transform: uppercase;
 }
 
+.logo-text {
+  font-size: 1.5rem;
+  font-family: Oswald, Arial;
+  font-weight: 800;
+}
+
 #search {
   border-radius: 12px;
   padding: 13px 20px;
