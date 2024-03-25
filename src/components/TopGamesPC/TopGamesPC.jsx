@@ -5,8 +5,17 @@ import { useEffect, useState } from "react";
 const TopGamesPC = () => {
   const [topGameData, setTopGameData] = useState([]);
 
+  const url = "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity?platform=pc";
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
+      "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+    },
+  };
+
   useEffect(() => {
-    fetch("https://www.freetogame.com/api/games?sort-by=popularity?platform=browser")
+    fetch(url, options)
       .then((res) => res.json())
       .then((apiData) => setTopGameData(apiData))
       .catch((error) => console.log("Error in TopGamesPC.jsx fetch", error));
