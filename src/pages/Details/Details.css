@@ -1,7 +1,10 @@
 .details {
-  margin-bottom: 5vh;
+  padding-inline: 3vw;
   color: var(--font-white);
 }
+/* .details img:first-of-type {
+  border-radius: 24px;
+} */
 /* ---fonts */
 .details h2,
 .details h3,
@@ -31,7 +34,7 @@
 }
 /* ---game info */
 .details__game-info {
-  margin-top: 48px;
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.125rem;

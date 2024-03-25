@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   width: 95vw;
-  padding: 12px 2vw;
-  padding-left: 60px;
+  padding: 0.75rem 2vw;
+  padding-left: 3.75rem;
   position: fixed;
   right: 0;
 }
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .searchbar div h2 {
@@ -28,8 +28,8 @@
 
 #search {
   border-radius: 12px;
-  padding: 13px 20px;
-  width: 277px;
+  padding: 0.8125rem 1.25rem;
+  width: 17.3125rem;
   border-style: none;
   background-color: var(--darkBlue);
   color: var(--font-white);
@@ -45,9 +45,9 @@
 
 .user-input svg {
   position: absolute;
-  right: 10px;
+  right: 0.625rem;
 }
 
 .slide {
-  margin-left: 260px;
+  margin-left: 16.25rem;
 }

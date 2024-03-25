@@ -1,7 +1,8 @@
 .recently-component-content {
+  margin-bottom: 6rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+  grid-gap: 1.5rem;
 }
 
 .recently-component {

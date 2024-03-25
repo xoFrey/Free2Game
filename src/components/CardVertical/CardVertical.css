@@ -19,9 +19,9 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  border-top: 2px rgba(255, 255, 255, 0.2) solid;
-  padding-top: 24px;
-  margin-top: 48px;
+  border-top: 0.125rem rgba(255, 255, 255, 0.2) solid;
+  padding-top: 1.5rem;
+  margin-top: 3rem;
 }
 
 .fav {
