@@ -1,5 +1,6 @@
 .all-games {
-  padding-top: 100px;
+  padding-top: 6.25rem;
+  padding-inline: 3vw;
 }
 
 .allgames-cards {
@@ -7,42 +8,42 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .single-cards {
-  width: 300px;
+  width: 18.75rem;
 }
 
 /* : search suggestions */
 
 .suggestion {
   position: fixed;
-  right: 20px;
-  top: 50px;
+  right: 1.25rem;
+  top: 3.125rem;
   overflow-y: scroll;
-  height: 300px;
-  width: 300px;
+  height: 18.75rem;
+  width: 18.75rem;
   background-color: var(--card-bg-blue);
 }
 
 .suggestion-items {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 12px 5px;
+  gap: 0.75rem;
+  margin: 0.75rem 0.3125rem;
   background-color: var(--darkBlue);
   border-radius: 12px;
 }
 
 .suggestion-items img {
-  max-width: 50px;
+  max-width: 3.125rem;
 }
 
 .more-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin: 20px;
+  gap: 0.75rem;
+  margin: 1.25rem;
 }

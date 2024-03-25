@@ -25,7 +25,7 @@ const Details = () => {
     <section className="details">
       {singleGame ? (
         <>
-          <Title url={singleGame.screenshots[0].image} />
+          <Title backgroundImage={singleGame.screenshots[0].image} />
 
           <h2>{singleGame.title}</h2>
           <div className="details__game-info">
@@ -102,7 +102,7 @@ const Details = () => {
                   </div>
                   <div>
                     <h4>Additional Notes</h4>
-                    <p>PLACEHOLDER</p>
+                    <p>Specifications may change during development</p>
                   </div>
                 </div>
               ) : (

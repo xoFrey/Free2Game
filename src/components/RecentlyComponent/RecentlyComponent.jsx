@@ -7,22 +7,25 @@ const RecentlyComponent = () => {
 
   return (
     <section className="recently-component">
-      {recentlyFetch ? (
-        recentlyFetch.slice(0, 4).map((singleRecently, index) => (
-          <div className="single-cards " key={index}>
-            <CardVertical
-              thumbnail={singleRecently.thumbnail}
-              alt={singleRecently.item}
-              gameTitle={singleRecently.title}
-              shortDescription={singleRecently.short_description}
-              tags={singleRecently.genre}
-              platform={singleRecently.platform}
-            />
-          </div>
-        ))
-      ) : (
-        <p>loading...</p>
-      )}
+      <h2>Recently Added</h2>
+      <div className="recently-component-content">
+        {recentlyFetch ? (
+          recentlyFetch.slice(0, 4).map((singleRecently, index) => (
+            <div className="single-cards" key={index}>
+              <CardVertical
+                thumbnail={singleRecently.thumbnail}
+                alt={singleRecently.item}
+                gameTitle={singleRecently.title}
+                shortDescription={singleRecently.short_description}
+                tags={singleRecently.genre}
+                platform={singleRecently.platform}
+              />
+            </div>
+          ))
+        ) : (
+          <p>loading...</p>
+        )}
+      </div>
     </section>
   );
 };
