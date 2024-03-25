@@ -11,7 +11,6 @@ const TopGamesPC = () => {
       .then((apiData) => setTopGameData(apiData))
       .catch((error) => console.log("Error in TopGamesPC.jsx fetch", error));
   }, []);
-  console.log(topGameData);
 
   return (
     <section className="pc">
@@ -28,12 +27,7 @@ const TopGamesPC = () => {
                 backgroundSize: "cover",
               }}
             >
-              <TopCard
-                gameTitle={item.title}
-                imgURL={item.thumbnail}
-                tags={item.genre}
-                id={`/details/${item.id}`}
-              />
+              <TopCard gameTitle={item.title} imgURL={item.thumbnail} tags={item.genre} id={`/details/${item.id}`} />
             </div>
           ))
         ) : (
@@ -44,12 +38,7 @@ const TopGamesPC = () => {
           {topGameData ? (
             topGameData.slice(1, 4).map((item, index) => (
               <div key={index}>
-                <CardHorizontal
-                  imgURL={item.thumbnail}
-                  gameTitle={item.title}
-                  tags={item.genre}
-                  rankIndex={index + 2}
-                />
+                <CardHorizontal imgURL={item.thumbnail} gameTitle={item.title} tags={item.genre} rankIndex={index + 2} />
               </div>
             ))
           ) : (

@@ -4,7 +4,6 @@ import { Recently } from "../../components/Context/Context";
 import { useContext } from "react";
 const RecentlyComponent = () => {
   const { recentlyFetch, setRecentlyFetch } = useContext(Recently);
-  console.log(recentlyFetch);
   return (
     <section className="recently-component">
       {recentlyFetch ? (
