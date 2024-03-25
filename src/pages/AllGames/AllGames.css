@@ -1,6 +1,7 @@
 .all-games {
   padding-top: 6.25rem;
   padding-inline: 3vw;
+  margin-bottom: 9rem;
 }
 
 .allgames-cards {
@@ -9,10 +10,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1.875rem;
-}
-
-.single-cards {
-  width: 18.75rem;
 }
 
 /* : search suggestions */

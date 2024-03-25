@@ -5,16 +5,12 @@ import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
 
-import {
-  GenreValue,
-  PlatformValue,
-  UserInput,
-  AllGamesFetch,
-  SearchedGames,
-} from "../../components/Context/Context";
+
+import { GenreValue, PlatformValue, UserInput, AllGamesFetch, SearchedGames } from "../../components/Context/Context";
 
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
+import BackToTop from "../../components/BackToTop/BackToTop";
 
 const AllGames = () => {
   const { allGames, setAllGames } = useContext(AllGamesFetch);
@@ -26,6 +22,7 @@ const AllGames = () => {
   const { userInput, setUserInput } = useContext(UserInput);
 
   useEffect(() => {
+
     const filtered = allGames.filter((item) =>
       item.title.toLowerCase().includes(userInput.toLowerCase())
     );
@@ -39,21 +36,20 @@ const AllGames = () => {
 
   return (
     <>
-      <section className="all-games">
+      <section className="all-games ">
         <Title backgroundImage={allGamesImage} title={"All Games"} />
         <Filter allGames={allGames} />
         {allGames && userInput === "" ? (
           <>
             <div className="allgames-cards">
               {allGames.slice(0, limit).map((item, index) => (
-                <div className="single-cards" key={index}>
-                  <CardVertical
-                    thumbnail={item.thumbnail}
-                    gameTitle={item.title}
-                    tags={item.genre}
-                    // fav={setFavorites([...favorites, item])}
-                  />
-                </div>
+                <CardVertical
+                  key={index}
+                  thumbnail={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                  // fav={setFavorites([...favorites, item])}
+                />
               ))}
             </div>{" "}
             <div className="more-btn">
@@ -74,12 +70,10 @@ const AllGames = () => {
         ) : (
           <div className="allgames-cards">
             {searchedGames.map((item) => (
-              <div className="single-cards">
-                <CardVertical
-                  thumbnail={item.thumbnail}
-                  gameTitle={item.title}
-                  tags={item.genre}
-                />
+
+              <div>
+                <CardVertical thumbnail={item.thumbnail} gameTitle={item.title} tags={item.genre} />
+
               </div>
             ))}
           </div>
@@ -102,6 +96,7 @@ const AllGames = () => {
       ) : (
         " "
       )}
+      <BackToTop />
     </>
   );
 };

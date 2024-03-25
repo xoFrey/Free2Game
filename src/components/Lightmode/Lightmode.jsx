@@ -12,6 +12,7 @@ const Lightmode = () => {
     document.documentElement.style.setProperty("--lightBlue", "#afc7df");
     document.documentElement.style.setProperty("--darkBlue", "#375470");
   } else {
+
     document.documentElement.style.setProperty("--bg-black", "#F2F6F7");
     document.documentElement.style.setProperty("--font-white", "#040f14");
     document.documentElement.style.setProperty("--card-bg-blue", "#ffffff");

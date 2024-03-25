@@ -27,3 +27,19 @@
   object-fit: cover;
   object-position: center;
 }
+
+.card-horizontal-tags-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-horizontal-tags-flex a {
+  font-size: 1rem;
+  font-family: Oswald, Arial;
+  border: 1px solid var(--accent-color-magenta);
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.9375rem;
+  text-transform: capitalize;
+  margin-right: 0.4rem;
+}
