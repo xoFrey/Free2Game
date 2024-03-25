@@ -5,7 +5,6 @@ import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
 import {
-  Favorites,
   GenreValue,
   PlatformValue,
   UserInput,
@@ -21,7 +20,7 @@ const AllGames = () => {
   const { genreValue } = useContext(GenreValue);
   const { sortByValue } = useContext(SortByValue);
   const { userInput, setUserInput } = useContext(UserInput);
-  const { favorites, setFavorites } = useContext(Favorites);
+  // const { favorites, setFavorites } = useContext(Favorites);
 
   useEffect(() => {
     fetch(
@@ -48,7 +47,7 @@ const AllGames = () => {
     setGenreArray([...genreArray, genreValue]);
   }, [genreValue]);
 
-  console.log(favorites);
+  // console.log(favorites);
 
   return (
     <>

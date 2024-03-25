@@ -3,7 +3,6 @@ import { LightMode } from "../Context/Context";
 
 const Lightmode = () => {
   const { lightDark, setLightDark } = useContext(LightMode);
-  console.log(lightDark);
 
   if (lightDark === false) {
     document.documentElement.style.setProperty("--bg-black", "#040f14");
