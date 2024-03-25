@@ -9,9 +9,10 @@ const Details = () => {
   const [singleGame, setSingleGame] = useState(null);
   // --- get id by useParams
   const { id } = useParams();
+
   // ---fetch
   useEffect(() => {
-    fetch("https://www.freetogame.com/api/game?id=452")
+    fetch(`https://www.freetogame.com/api/game?id=${id}`)
       .then((res) => res.json())
       .then((fetchData) => setSingleGame(fetchData))
       .catch((err) => console.error("fetch error at detailpage", err));

@@ -6,6 +6,7 @@ import recentlyImage from "../../../public/img/RecentGames.jpg";
 import { useContext, useEffect, useState } from "react";
 import { Recently } from "../../components/Context/Context";
 import BackToTop from "../../components/BackToTop/BackToTop";
+
 const RecentlyAdded = () => {
   const { recentlyFetch, setRecentlyFetch } = useContext(Recently);
   const [limit2, setLimit2] = useState(20);
@@ -14,9 +15,11 @@ const RecentlyAdded = () => {
       <Title backgroundImage={recentlyImage} title="Recently Added" />
       <article className="allgames-cards">
         {recentlyFetch ? (
-          recentlyFetch.slice(0, limit2).map((singleRecently, index) => (
-            <div className="single-cards " key={index}>
+          recentlyFetch
+            .slice(0, limit2)
+            .map((singleRecently, index) => (
               <CardVertical
+                key={index}
                 thumbnail={singleRecently.thumbnail}
                 alt={singleRecently.item}
                 gameTitle={singleRecently.title}
@@ -24,8 +27,7 @@ const RecentlyAdded = () => {
                 platform={singleRecently.platform}
                 link={singleRecently.id}
               />
-            </div>
-          ))
+            ))
         ) : (
           <p>loading...</p>
         )}
