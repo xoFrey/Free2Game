@@ -43,6 +43,14 @@ html {
   font-family: Oswald, Arial, Helvetica, sans-serif;
 }
 
+/* :root {
+  --bg-black: #040f14;
+  --font-white: #ffffff;
+  --card-bg-blue: #102130;
+  --accent-color-magenta: #ff4654;
+  --lightBlue: #afc7df;
+  --darkBlue: #375470;
+} */
 :root {
   --bg-black: #040f14;
   --font-white: #ffffff;
@@ -88,6 +96,7 @@ h3 {
   border: none;
   padding: 1rem 1.8rem;
   margin: 0.6rem 0rem;
+  cursor: pointer;
 }
 
 .card-tags {

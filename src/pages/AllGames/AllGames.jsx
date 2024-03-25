@@ -5,6 +5,7 @@ import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
 import {
+  Favorites,
   GenreValue,
   PlatformValue,
   UserInput,
@@ -15,10 +16,12 @@ import { Link } from "react-router-dom";
 const AllGames = () => {
   const [allGames, setAllGames] = useState([]);
   const [searchedGames, setSearchedGames] = useState("");
+  const [limit, setLimit] = useState(20);
   const { platformValue } = useContext(PlatformValue);
   const { genreValue } = useContext(GenreValue);
   const { sortByValue } = useContext(SortByValue);
   const { userInput, setUserInput } = useContext(UserInput);
+  const { favorites, setFavorites } = useContext(Favorites);
 
   useEffect(() => {
     fetch(
@@ -45,7 +48,7 @@ const AllGames = () => {
     setGenreArray([...genreArray, genreValue]);
   }, [genreValue]);
 
-  console.log(genreArray);
+  console.log(favorites);
 
   return (
     <>
@@ -53,17 +56,34 @@ const AllGames = () => {
         <Title backgroundImage={allGamesImage} title={"All Games"} />
         <Filter allGames={allGames} />
         {allGames && userInput === "" ? (
-          <div className="allgames-cards">
-            {allGames.map((item, index) => (
-              <div className="single-cards" key={index}>
-                <CardVertical
-                  thumbnail={item.thumbnail}
-                  gameTitle={item.title}
-                  tags={item.genre}
-                />
-              </div>
-            ))}
-          </div>
+          <>
+            <div className="allgames-cards">
+              {allGames.slice(0, limit).map((item, index) => (
+                <div className="single-cards" key={index}>
+                  <CardVertical
+                    thumbnail={item.thumbnail}
+                    gameTitle={item.title}
+                    tags={item.genre}
+                    // fav={setFavorites([...favorites, item])}
+                  />
+                </div>
+              ))}
+            </div>{" "}
+            <div className="more-btn">
+              <button
+                onClick={() => setLimit(limit + 20)}
+                className="solid-button"
+              >
+                Load More
+              </button>
+              <button
+                onClick={() => setLimit(allGames.length)}
+                className="solid-button"
+              >
+                Show All
+              </button>
+            </div>
+          </>
         ) : (
           <div className="allgames-cards">
             {searchedGames.map((item) => (
