@@ -13,7 +13,6 @@ import {
   SearchedGames,
 } from "../../components/Context/Context";
 
-import { GenreValue, PlatformValue, UserInput } from "../../components/Context/Context";
 
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
