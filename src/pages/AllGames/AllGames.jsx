@@ -13,8 +13,6 @@ import {
   SearchedGames,
 } from "../../components/Context/Context";
 
-import { GenreValue, PlatformValue, UserInput } from "../../components/Context/Context";
-
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
 
@@ -29,7 +27,9 @@ const AllGames = () => {
 
   useEffect(() => {
     fetch(
-      `https://www.freetogame.com/api/games?${platformValue != "" ? "platform=" + platformValue : ""}&${genreValue != "" ? "category=" + genreValue : ""}&${
+      `https://www.freetogame.com/api/games?${
+        platformValue != "" ? "platform=" + platformValue : ""
+      }&${genreValue != "" ? "category=" + genreValue : ""}&${
         sortByValue != "" ? "sort-by=" + sortByValue : ""
       }`
     )
@@ -39,7 +39,9 @@ const AllGames = () => {
   }, [platformValue, genreValue, sortByValue]);
 
   useEffect(() => {
-    const filtered = allGames.filter((item) => item.title.toLowerCase().includes(userInput.toLowerCase()));
+    const filtered = allGames.filter((item) =>
+      item.title.toLowerCase().includes(userInput.toLowerCase())
+    );
     setSearchedGames(filtered);
   }, [allGames, userInput]);
 
@@ -68,10 +70,16 @@ const AllGames = () => {
               ))}
             </div>{" "}
             <div className="more-btn">
-              <button onClick={() => setLimit(limit + 20)} className="solid-button">
+              <button
+                onClick={() => setLimit(limit + 20)}
+                className="solid-button"
+              >
                 Load More
               </button>
-              <button onClick={() => setLimit(allGames.length)} className="solid-button">
+              <button
+                onClick={() => setLimit(allGames.length)}
+                className="solid-button"
+              >
                 Show All
               </button>
             </div>
@@ -80,7 +88,11 @@ const AllGames = () => {
           <div className="allgames-cards">
             {searchedGames.map((item) => (
               <div className="single-cards">
-                <CardVertical thumbnail={item.thumbnail} gameTitle={item.title} tags={item.genre} />
+                <CardVertical
+                  thumbnail={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                />
               </div>
             ))}
           </div>
@@ -90,7 +102,10 @@ const AllGames = () => {
         <section className="suggestion">
           {searchedGames.map((item) => (
             <Link to={`/details/${item.id}`}>
-              <div onClick={() => setUserInput("")} className="suggestion-items">
+              <div
+                onClick={() => setUserInput("")}
+                className="suggestion-items"
+              >
                 <img src={item.thumbnail} alt="" />
                 <h3>{item.title}</h3>
               </div>
