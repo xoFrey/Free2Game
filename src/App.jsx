@@ -56,7 +56,7 @@ function App() {
                           <Route path="/" element={<Home />} />
                           <Route path="/allgames" element={<AllGames />} />
                           <Route path="/recently" element={<RecentlyAdded />} />
-                          <Route path="/details" element={<Details />} />
+                          <Route path="/details/:id" element={<Details />} />
                         </Routes>
                       </div>
                     </BrowserRouter>

@@ -21,6 +21,7 @@ const RecentlyComponent = () => {
                 shortDescription={singleRecently.short_description}
                 tags={singleRecently.genre}
                 platform={singleRecently.platform}
+                link={singleRecently.id}
               />
             ))
         ) : (

@@ -8,7 +8,6 @@ import allGamesImage from "../../../public/img/allGames.jpg";
 
 import { GenreValue, PlatformValue, UserInput, AllGamesFetch, SearchedGames } from "../../components/Context/Context";
 
-
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
 import BackToTop from "../../components/BackToTop/BackToTop";
@@ -24,16 +23,6 @@ const AllGames = () => {
 
   useEffect(() => {
 
-    fetch(`https://www.freetogame.com/api/games?${platformValue != "" ? "platform=" + platformValue : ""}&${genreValue != "" ? "category=" + genreValue : ""}&${
-        sortByValue != "" ? "sort-by=" + sortByValue : ""
-      }`
-    )
-      .then((res) => res.json())
-      .then((data) => setAllGames(data))
-      .catch((err) => console.log("All Games Fetch", err));
-  }, [platformValue, genreValue, sortByValue]);
-
-  useEffect(() => {
     const filtered = allGames.filter((item) =>
       item.title.toLowerCase().includes(userInput.toLowerCase())
     );
