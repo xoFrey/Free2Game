@@ -14,7 +14,7 @@ import {
   SortByValue,
   UserInput,
   LightMode,
-  Favorites,
+  Recently,
 } from "./components/Context/Context";
 
 function App() {
@@ -23,17 +23,15 @@ function App() {
   const [sortByValue, setSortByValue] = useState("");
   const [userInput, setUserInput] = useState("");
   const [lightDark, setLightDark] = useState(false);
-  const [favorites, setFavorites] = useState("");
+  const [recentlyFetch, setRecentlyFetch] = useState();
 
   return (
-    <Favorites.Provider value={{ favorites, setFavorites }}>
+    <Recently.Provider value={{ recentlyFetch, setRecentlyFetch }}>
       <LightMode.Provider value={{ lightDark, setLightDark }}>
         <UserInput.Provider value={{ userInput, setUserInput }}>
           <GenreValue.Provider value={{ genreValue, setGenreValue }}>
             <SortByValue.Provider value={{ sortByValue, setSortByValue }}>
-              <PlatformValue.Provider
-                value={{ platformValue, setPlatformValue }}
-              >
+              <PlatformValue.Provider value={{ platformValue, setPlatformValue }}>
                 <BrowserRouter>
                   <Navbar />
                   <Searchbar />
@@ -52,7 +50,7 @@ function App() {
           </GenreValue.Provider>
         </UserInput.Provider>
       </LightMode.Provider>
-    </Favorites.Provider>
+    </Recently.Provider>
   );
 }
 
