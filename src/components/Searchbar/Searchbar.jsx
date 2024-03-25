@@ -12,8 +12,10 @@ const Searchbar = ({ fold }) => {
       <section className="searchbar">
         <div className={fold ? "slide" : ""}>
           <a href="/" className="logo-text">
-            <Logo />
-            <h2>Free2Game</h2>
+            <h2>
+              <Logo />
+              Free2Game
+            </h2>
           </a>
         </div>
         <div>

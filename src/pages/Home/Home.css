@@ -1,3 +1,8 @@
+.home-wrapper {
+  padding-inline: 3vw;
+  margin-bottom: 9rem;
+}
+
 .home_title {
   min-height: 36.4375rem;
   background-image: url(../../../public/img/League-of-Legends-Guide-fuer-Anfaenger\ 1.jpeg);
@@ -11,7 +16,4 @@
   width: 20ch;
   padding-top: 20.625rem;
   padding-left: 5rem;
-}
-.home-wrapper {
-  padding-inline: 3vw;
 }

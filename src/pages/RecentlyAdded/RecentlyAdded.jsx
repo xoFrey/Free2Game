@@ -36,7 +36,10 @@ const RecentlyAdded = () => {
         <button onClick={() => setLimit2(limit2 + 20)} className="solid-button">
           Load More
         </button>
-        <button onClick={() => setLimit2(recentlyFetch.length)} className="solid-button">
+        <button
+          onClick={() => setLimit2(recentlyFetch.length)}
+          className="solid-button"
+        >
           Show All
         </button>
       </div>

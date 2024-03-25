@@ -9,3 +9,6 @@
   display: flex;
   flex-direction: column;
 }
+.recently-component h2 {
+  margin-bottom: 3rem;
+}
