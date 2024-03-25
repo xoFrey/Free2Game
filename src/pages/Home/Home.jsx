@@ -3,14 +3,9 @@ import TopGamesPC from "./../../components/TopGamesPC/TopGamesPC";
 import TopGamesBrowser from "./../../components/TopGamesBrowser/TopGamesBrowser";
 import RecentlyComponent from "../../components/RecentlyComponent/RecentlyComponent";
 import { Link } from "react-router-dom";
-import {
-  AllGamesFetch,
-  Recently,
-  SearchedGames,
-  UserInput,
-} from "../../components/Context/Context";
+import { AllGamesFetch, Recently, SearchedGames, UserInput } from "../../components/Context/Context";
 import { useContext, useEffect } from "react";
-import BackToTop from "../../components/backToTop/BackToTop";
+import BackToTop from "../../components/BackToTop/BackToTop";
 
 const Home = () => {
   const { allGames } = useContext(AllGamesFetch);
@@ -32,12 +27,9 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const filtered = allGames.filter((item) =>
-      item.title.toLowerCase().includes(userInput.toLowerCase())
-    );
+    const filtered = allGames.filter((item) => item.title.toLowerCase().includes(userInput.toLowerCase()));
     setSearchedGames(filtered);
   }, [allGames, userInput]);
-
 
   return (
     <>
@@ -49,25 +41,15 @@ const Home = () => {
           <RecentlyComponent />
           <TopGamesPC />
           <TopGamesBrowser />
+          <BackToTop />
         </div>
       </section>
-
-      <div className="home-wrapper">
-        <RecentlyComponent />
-        <TopGamesPC />
-        <TopGamesBrowser />
-        <BackToTop />
-      </div>
-    </section>
 
       {userInput != "" ? (
         <section className="suggestion">
           {searchedGames.map((item) => (
             <Link to={`/details/${item.id}`}>
-              <div
-                onClick={() => setUserInput("")}
-                className="suggestion-items"
-              >
+              <div onClick={() => setUserInput("")} className="suggestion-items">
                 <img src={item.thumbnail} alt="" />
                 <h3>{item.title}</h3>
               </div>

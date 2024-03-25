@@ -5,7 +5,6 @@ import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
 
-
 import {
   GenreValue,
   PlatformValue,
@@ -16,7 +15,7 @@ import {
 
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
-import BackToTop from "../../components/backToTop/BackToTop";
+import BackToTop from "../../components/BackToTop/BackToTop";
 
 const AllGames = () => {
   const { allGames, setAllGames } = useContext(AllGamesFetch);
@@ -29,11 +28,9 @@ const AllGames = () => {
 
   useEffect(() => {
     fetch(
-
-      `https://www.freetogame.com/api/games?${platformValue != "" ? "platform=" + platformValue : ""}&${genreValue != "" ? "category=" + genreValue : ""}&${
-        sortByValue != "" ? "sort-by=" + sortByValue : ""
-      }`
-
+      `https://www.freetogame.com/api/games?${platformValue != "" ? "platform=" + platformValue : ""}&${
+        genreValue != "" ? "category=" + genreValue : ""
+      }&${sortByValue != "" ? "sort-by=" + sortByValue : ""}`
     )
       .then((res) => res.json())
       .then((data) => setAllGames(data))
@@ -59,14 +56,13 @@ const AllGames = () => {
           <>
             <div className="allgames-cards">
               {allGames.slice(0, limit).map((item, index) => (
-                <div className="single-cards" key={index}>
-                  <CardVertical
-                    thumbnail={item.thumbnail}
-                    gameTitle={item.title}
-                    tags={item.genre}
-                    // fav={setFavorites([...favorites, item])}
-                  />
-                </div>
+                <CardVertical
+                  key={index}
+                  thumbnail={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                  // fav={setFavorites([...favorites, item])}
+                />
               ))}
             </div>{" "}
             <div className="more-btn">
@@ -81,7 +77,7 @@ const AllGames = () => {
         ) : (
           <div className="allgames-cards">
             {searchedGames.map((item) => (
-              <div className="single-cards">
+              <div>
                 <CardVertical thumbnail={item.thumbnail} gameTitle={item.title} tags={item.genre} />
               </div>
             ))}
