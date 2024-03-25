@@ -1,7 +1,7 @@
+
 .recently-added {
   margin-inline: 3vw;
 }
-/* --- evtl. wegmachen */
 .recently-added article {
   margin-top: 1.25rem;
 }
@@ -12,3 +12,4 @@
   flex-wrap: wrap;
   gap: 1.875rem;
 }
+

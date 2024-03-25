@@ -5,6 +5,7 @@ import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
 
+
 import {
   GenreValue,
   PlatformValue,
@@ -13,9 +14,9 @@ import {
   SearchedGames,
 } from "../../components/Context/Context";
 
-
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
+import BackToTop from "../../components/backToTop/BackToTop";
 
 const AllGames = () => {
   const { allGames, setAllGames } = useContext(AllGamesFetch);
@@ -28,9 +29,11 @@ const AllGames = () => {
 
   useEffect(() => {
     fetch(
+
       `https://www.freetogame.com/api/games?${platformValue != "" ? "platform=" + platformValue : ""}&${genreValue != "" ? "category=" + genreValue : ""}&${
         sortByValue != "" ? "sort-by=" + sortByValue : ""
       }`
+
     )
       .then((res) => res.json())
       .then((data) => setAllGames(data))
@@ -49,7 +52,7 @@ const AllGames = () => {
 
   return (
     <>
-      <section className="all-games">
+      <section className="all-games ">
         <Title backgroundImage={allGamesImage} title={"All Games"} />
         <Filter allGames={allGames} />
         {allGames && userInput === "" ? (
@@ -99,6 +102,7 @@ const AllGames = () => {
       ) : (
         " "
       )}
+      <BackToTop />
     </>
   );
 };

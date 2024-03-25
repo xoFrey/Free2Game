@@ -2,6 +2,7 @@ import Title from "../../components/Title/Title";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Details.css";
+import BackToTop from "../../components/backToTop/BackToTop";
 
 const Details = () => {
   // ---useState
@@ -55,10 +56,7 @@ const Details = () => {
           <div className="details__add-info">
             <div className="details__add-info--left">
               <h3>Additional Information</h3>
-              <p>
-                Please note this free-to-play game may or may not offer optional
-                in-game purchases.
-              </p>
+              <p>Please note this free-to-play game may or may not offer optional in-game purchases.</p>
               <div className="details__add-info--left--container">
                 <div>
                   <h4>Developer</h4>
@@ -114,6 +112,7 @@ const Details = () => {
       ) : (
         <p>Loading...</p>
       )}
+      <BackToTop />
     </section>
   );
 };

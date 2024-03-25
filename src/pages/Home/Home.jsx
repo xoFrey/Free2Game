@@ -10,6 +10,7 @@ import {
   UserInput,
 } from "../../components/Context/Context";
 import { useContext, useEffect } from "react";
+import BackToTop from "../../components/backToTop/BackToTop";
 
 const Home = () => {
   const { allGames } = useContext(AllGamesFetch);
@@ -23,12 +24,20 @@ const Home = () => {
       .catch((err) => console.error("Fehler in Recently-Fetch", err));
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const filtered = allGames.filter((item) =>
       item.title.toLowerCase().includes(userInput.toLowerCase())
     );
     setSearchedGames(filtered);
   }, [allGames, userInput]);
+
 
   return (
     <>
@@ -42,6 +51,15 @@ const Home = () => {
           <TopGamesBrowser />
         </div>
       </section>
+
+      <div className="home-wrapper">
+        <RecentlyComponent />
+        <TopGamesPC />
+        <TopGamesBrowser />
+        <BackToTop />
+      </div>
+    </section>
+
       {userInput != "" ? (
         <section className="suggestion">
           {searchedGames.map((item) => (
