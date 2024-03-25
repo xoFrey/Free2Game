@@ -5,17 +5,8 @@ import { useEffect, useState } from "react";
 const TopGamesPC = () => {
   const [topGameData, setTopGameData] = useState([]);
 
-  const url = "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity?platform=pc";
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
-      "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-    },
-  };
-
   useEffect(() => {
-    fetch(url, options)
+    fetch("https://www.freetogame.com/api/games?platform=pc&sort-by=popularity")
       .then((res) => res.json())
       .then((apiData) => setTopGameData(apiData))
       .catch((error) => console.log("Error in TopGamesPC.jsx fetch", error));
@@ -28,8 +19,21 @@ const TopGamesPC = () => {
       <div className="top-component-pc-flex">
         {topGameData ? (
           topGameData.slice(0, 1).map((item, index) => (
-            <div className="top-card" key={index} style={{ backgroundImage: `url(${item.thumbnail})`, backgroundPosition: "center", backgroundSize: "cover" }}>
-              <TopCard gameTitle={item.title} imgURL={item.thumbnail} tags={item.genre} id={`/details/${item.id}`} />
+            <div
+              className="top-card"
+              key={index}
+              style={{
+                backgroundImage: `url(${item.thumbnail})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+              }}
+            >
+              <TopCard
+                gameTitle={item.title}
+                imgURL={item.thumbnail}
+                tags={item.genre}
+                id={`/details/${item.id}`}
+              />
             </div>
           ))
         ) : (
@@ -40,7 +44,12 @@ const TopGamesPC = () => {
           {topGameData ? (
             topGameData.slice(1, 4).map((item, index) => (
               <div key={index}>
-                <CardHorizontal imgURL={item.thumbnail} gameTitle={item.title} tags={item.genre} rankIndex={index + 2} />
+                <CardHorizontal
+                  imgURL={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                  rankIndex={index + 2}
+                />
               </div>
             ))
           ) : (
