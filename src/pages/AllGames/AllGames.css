@@ -38,3 +38,11 @@
 .suggestion-items img {
   max-width: 50px;
 }
+
+.more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px;
+}

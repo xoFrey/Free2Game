@@ -9,16 +9,22 @@ const Lightmode = () => {
     document.documentElement.style.setProperty("--bg-black", "#040f14");
     document.documentElement.style.setProperty("--font-white", "#ffffff");
     document.documentElement.style.setProperty("--card-bg-blue", "#102130");
-    document.documentElement.style.setProperty("--accent-color-magenta", "#ff4654");
+    document.documentElement.style.setProperty(
+      "--accent-color-magenta",
+      "#ff4654"
+    );
     document.documentElement.style.setProperty("--lightBlue", "#afc7df");
     document.documentElement.style.setProperty("--darkBlue", "#375470");
   } else {
-    document.documentElement.style.setProperty("--bg-black", "#fbf0eb");
-    document.documentElement.style.setProperty("--font-white", "#000000");
-    document.documentElement.style.setProperty("--card-bg-blue", "#efdecf");
-    document.documentElement.style.setProperty("--accent-color-magenta", "#00b9ab");
-    document.documentElement.style.setProperty("--lightBlue", "#503820");
-    document.documentElement.style.setProperty("--darkBlue", "#c8ab8f");
+    document.documentElement.style.setProperty("--bg-black", "#b7dff1");
+    document.documentElement.style.setProperty("--font-white", "#ffffff");
+    document.documentElement.style.setProperty("--card-bg-blue", "#2d5e88");
+    document.documentElement.style.setProperty(
+      "--accent-color-magenta",
+      "#ff828b"
+    );
+    document.documentElement.style.setProperty("--lightBlue", "#1e344b");
+    document.documentElement.style.setProperty("--darkBlue", "#87a6c4");
   }
 
   return (
