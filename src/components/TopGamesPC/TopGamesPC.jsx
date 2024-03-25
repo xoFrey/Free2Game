@@ -38,7 +38,7 @@ const TopGamesPC = () => {
           {topGameData ? (
             topGameData.slice(1, 4).map((item, index) => (
               <div key={index}>
-                <CardHorizontal imgURL={item.thumbnail} gameTitle={item.title} tags={item.genre} rankIndex={index + 2} />
+                <CardHorizontal imgURL={item.thumbnail} gameTitle={item.title} tags={item.genre} rankIndex={index + 2} platform={item.platform} />
               </div>
             ))
           ) : (
