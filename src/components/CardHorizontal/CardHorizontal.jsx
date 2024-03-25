@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./CardHorizontal.css";
-import TopCard from "../TopCard/TopCard";
 import TopGamesRank from "../TopGamesPC/TopGamesRank";
 const CardHorizontal = ({ imgURL, gameTitle, tags, id, rankIndex }) => {
   return (

@@ -8,9 +8,8 @@ const CardVertical = ({
   link,
   tags,
   platform,
-  fav,
 }) => {
-  const [isFav, setIsFav] = useState(false);
+  // const [isFav, setIsFav] = useState(false);
 
   return (
     <section className="card-vertical">
