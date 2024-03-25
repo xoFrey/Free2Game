@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 const TopGamesBrowser = () => {
   const [topBrowser, setTopBrowser] = useState();
   useEffect(() => {
-    fetch("https://www.freetogame.com/api/games?platform=browser&sort-by=popularity")
+    fetch(
+      "https://www.freetogame.com/api/games?platform=browser&sort-by=popularity"
+    )
       .then((respo) => respo.json())
       .then((allData) => setTopBrowser(allData))
       .catch((err) => console.error("Fehler in top-Browser-Fetch", err));

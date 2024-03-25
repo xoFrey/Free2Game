@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import "./CardVertical.css";
-import { useState } from "react";
-const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, platform, fav }) => {
-  const [isFav, setIsFav] = useState(false);
 
+import { useContext, useState } from "react";
+import { GenreValue, PlatformValue } from "../Context/Context";
+const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, platform }) => {
+  // const [isFav, setIsFav] = useState(false);
+
+
+  const { genreValueItem } = useContext(GenreValue);
   return (
     <section className="card-vertical">
       <img src={thumbnail} alt={gameTitle} />
@@ -11,7 +15,8 @@ const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, plat
         <h3>{gameTitle}</h3>
         <p>{shortDescription}</p>
         <div className="fav">
-          <Link to="/allgames">
+          {console.log(link)}
+          <Link to={`/details/${link}`}>
             <button className="solid-button">Read more</button>
           </Link>
           {/* <p
@@ -23,6 +28,7 @@ const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, plat
           </p> */}
         </div>
         <div className="tags-flex">
+
           <a href="#" className="card-tags">
             {tags}
           </a>
@@ -46,6 +52,7 @@ const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, plat
             )}
             {console.log({ platform })}
           </a>
+
         </div>
       </div>
     </section>

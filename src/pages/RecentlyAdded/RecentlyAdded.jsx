@@ -22,6 +22,7 @@ const RecentlyAdded = () => {
                 gameTitle={singleRecently.title}
                 tags={singleRecently.genre}
                 platform={singleRecently.platform}
+                link={singleRecently.id}
               />
             </div>
           ))

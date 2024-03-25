@@ -11,21 +11,15 @@ const Searchbar = ({ fold }) => {
     <>
       <section className="searchbar">
         <div className={fold ? "slide" : ""}>
-          <Logo />
-          <h2>Free2Game</h2>
+          <a href="/" className="logo-text">
+            <Logo />
+            <h2>Free2Game</h2>
+          </a>
         </div>
         <div>
           <div className="user-input">
             <SearchIcon />
-            <input
-              onChange={(e) => setUserInput(e.target.value)}
-              value={userInput}
-              type="text"
-              name="search"
-              id="search"
-              placeholder=""
-              autoComplete="off"
-            />
+            <input onChange={(e) => setUserInput(e.target.value)} value={userInput} type="text" name="search" id="search" placeholder="" autoComplete="off" />
           </div>
           <Lightmode />
         </div>
