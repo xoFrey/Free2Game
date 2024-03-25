@@ -8,13 +8,15 @@ import {
   GenreValue,
   PlatformValue,
   UserInput,
+  AllGamesFetch,
+  SearchedGames,
 } from "../../components/Context/Context";
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
 
 const AllGames = () => {
-  const [allGames, setAllGames] = useState([]);
-  const [searchedGames, setSearchedGames] = useState("");
+  const { allGames, setAllGames } = useContext(AllGamesFetch);
+  const { searchedGames, setSearchedGames } = useContext(SearchedGames);
   const [limit, setLimit] = useState(20);
   const { platformValue } = useContext(PlatformValue);
   const { genreValue } = useContext(GenreValue);
@@ -46,8 +48,6 @@ const AllGames = () => {
   useEffect(() => {
     setGenreArray([...genreArray, genreValue]);
   }, [genreValue]);
-
-  // console.log(favorites);
 
   return (
     <>
