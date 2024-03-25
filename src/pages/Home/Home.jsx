@@ -41,6 +41,7 @@ const Home = () => {
           <RecentlyComponent />
           <TopGamesPC />
           <TopGamesBrowser />
+          <BackToTop />
         </div>
       </section>
 
