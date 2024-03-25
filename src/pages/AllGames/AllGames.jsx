@@ -4,7 +4,15 @@ import CardVertical from "./../../components/CardVertical/CardVertical";
 import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
+
+import {
+  GenreValue,
+  PlatformValue,
+  UserInput,
+} from "../../components/Context/Context";
+
 import { GenreValue, PlatformValue, UserInput } from "../../components/Context/Context";
+
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
 
@@ -38,7 +46,7 @@ const AllGames = () => {
     setGenreArray([...genreArray, genreValue]);
   }, [genreValue]);
 
-  console.log(favorites);
+  // console.log(favorites);
 
   return (
     <>
