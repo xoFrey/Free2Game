@@ -4,7 +4,6 @@ import AllGames from "./pages/AllGames/AllGames";
 import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 import Details from "./pages/Details/Details";
 import "./App.css";
-
 import Navbar from "./components/Navbar/Navbar";
 import Searchbar from "./components/Searchbar/Searchbar";
 import { useState } from "react";
@@ -31,11 +30,12 @@ function App() {
         <UserInput.Provider value={{ userInput, setUserInput }}>
           <GenreValue.Provider value={{ genreValue, setGenreValue }}>
             <SortByValue.Provider value={{ sortByValue, setSortByValue }}>
-              <PlatformValue.Provider value={{ platformValue, setPlatformValue }}>
+              <PlatformValue.Provider
+                value={{ platformValue, setPlatformValue }}
+              >
                 <BrowserRouter>
                   <Navbar />
                   <Searchbar />
-
                   <div className="app">
                     <Routes>
                       <Route path="/" element={<Home />} />
