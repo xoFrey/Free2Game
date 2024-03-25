@@ -1,14 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Burgermenu from "../../assets/svg/Burgermenu";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import HomeIcon from "../../assets/svg/HomeIcon";
 import ExitButton from "../../assets/svg/ExitButton";
 import GamesIcon from "../../assets/svg/GamesIcon";
 import RecentlyIcon from "../../assets/svg/RecentlyIcon";
 import Searchbar from "../Searchbar/Searchbar";
+import { LightMode } from "../Context/Context";
 
 const Navbar = () => {
+  // global lightdark mode state
+  const { lightDark } = useContext(LightMode);
   const [fold, setFold] = useState(false);
   return (
     <>
