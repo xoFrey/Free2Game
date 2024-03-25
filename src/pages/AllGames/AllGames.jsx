@@ -38,8 +38,6 @@ const AllGames = () => {
     setGenreArray([...genreArray, genreValue]);
   }, [genreValue]);
 
-  console.log(favorites);
-
   return (
     <>
       <section className="all-games">
