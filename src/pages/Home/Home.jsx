@@ -5,6 +5,7 @@ import RecentlyComponent from "../../components/RecentlyComponent/RecentlyCompon
 import CardVertical from "../../components/CardVertical/CardVertical";
 import { Recently } from "../../components/Context/Context";
 import { useContext, useEffect } from "react";
+import BackToTop from "../../components/backToTop/BackToTop";
 
 const Home = () => {
   const { recentlyFetch, setRecentlyFetch } = useContext(Recently);
@@ -13,10 +14,15 @@ const Home = () => {
       .then((respo) => respo.json())
       .then((allData) => setRecentlyFetch(allData))
       .catch((err) => console.error("Fehler in Recently-Fetch", err));
-  }, [recentlyFetch]);
+  }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-  
   return (
     <section className="home">
       <section className="home_title">
@@ -26,6 +32,7 @@ const Home = () => {
         <RecentlyComponent />
         <TopGamesPC />
         <TopGamesBrowser />
+        <BackToTop />
       </div>
     </section>
   );

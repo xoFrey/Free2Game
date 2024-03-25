@@ -4,14 +4,10 @@ import CardVertical from "./../../components/CardVertical/CardVertical";
 import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
-import {
-  Favorites,
-  GenreValue,
-  PlatformValue,
-  UserInput,
-} from "../../components/Context/Context";
+import { GenreValue, PlatformValue, UserInput } from "../../components/Context/Context";
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
+import BackToTop from "../../components/backToTop/BackToTop";
 
 const AllGames = () => {
   const [allGames, setAllGames] = useState([]);
@@ -21,15 +17,12 @@ const AllGames = () => {
   const { genreValue } = useContext(GenreValue);
   const { sortByValue } = useContext(SortByValue);
   const { userInput, setUserInput } = useContext(UserInput);
-  const { favorites, setFavorites } = useContext(Favorites);
 
   useEffect(() => {
     fetch(
-      `https://www.freetogame.com/api/games?${
-        platformValue != "" ? "platform=" + platformValue : ""
-      }&${genreValue != "" ? "category=" + genreValue : ""}&${
-        sortByValue != "" ? "sort-by=" + sortByValue : ""
-      }`
+      `https://www.freetogame.com/api/games?${platformValue != "" ? "platform=" + platformValue : ""}&${
+        genreValue != "" ? "category=" + genreValue : ""
+      }&${sortByValue != "" ? "sort-by=" + sortByValue : ""}`
     )
       .then((res) => res.json())
       .then((data) => setAllGames(data))
@@ -37,9 +30,7 @@ const AllGames = () => {
   }, [platformValue, genreValue, sortByValue]);
 
   useEffect(() => {
-    const filtered = allGames.filter((item) =>
-      item.title.toLowerCase().includes(userInput.toLowerCase())
-    );
+    const filtered = allGames.filter((item) => item.title.toLowerCase().includes(userInput.toLowerCase()));
     setSearchedGames(filtered);
   }, [allGames, userInput]);
 
@@ -48,11 +39,9 @@ const AllGames = () => {
     setGenreArray([...genreArray, genreValue]);
   }, [genreValue]);
 
-  console.log(favorites);
-
   return (
     <>
-      <section className="all-games">
+      <section className="all-games ">
         <Title backgroundImage={allGamesImage} title={"All Games"} />
         <Filter allGames={allGames} />
         {allGames && userInput === "" ? (
@@ -70,16 +59,10 @@ const AllGames = () => {
               ))}
             </div>{" "}
             <div className="more-btn">
-              <button
-                onClick={() => setLimit(limit + 20)}
-                className="solid-button"
-              >
+              <button onClick={() => setLimit(limit + 20)} className="solid-button">
                 Load More
               </button>
-              <button
-                onClick={() => setLimit(allGames.length)}
-                className="solid-button"
-              >
+              <button onClick={() => setLimit(allGames.length)} className="solid-button">
                 Show All
               </button>
             </div>
@@ -88,11 +71,7 @@ const AllGames = () => {
           <div className="allgames-cards">
             {searchedGames.map((item) => (
               <div className="single-cards">
-                <CardVertical
-                  thumbnail={item.thumbnail}
-                  gameTitle={item.title}
-                  tags={item.genre}
-                />
+                <CardVertical thumbnail={item.thumbnail} gameTitle={item.title} tags={item.genre} />
               </div>
             ))}
           </div>
@@ -102,10 +81,7 @@ const AllGames = () => {
         <section className="suggestion">
           {searchedGames.map((item) => (
             <Link to={`/details/${item.id}`}>
-              <div
-                onClick={() => setUserInput("")}
-                className="suggestion-items"
-              >
+              <div onClick={() => setUserInput("")} className="suggestion-items">
                 <img src={item.thumbnail} alt="" />
                 <h3>{item.title}</h3>
               </div>
@@ -115,6 +91,7 @@ const AllGames = () => {
       ) : (
         " "
       )}
+      <BackToTop />
     </>
   );
 };
