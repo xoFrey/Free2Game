@@ -2,7 +2,7 @@ import Title from "../../components/Title/Title";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Details.css";
-import BackToTop from "../../components/backToTop/BackToTop";
+import BackToTop from "../../components/BackToTop/BackToTop";
 
 const Details = () => {
   // ---useState
