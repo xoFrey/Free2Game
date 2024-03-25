@@ -26,19 +26,6 @@ const AllGames = () => {
   const { userInput, setUserInput } = useContext(UserInput);
 
   useEffect(() => {
-    fetch(
-      `https://www.freetogame.com/api/games?${
-        platformValue != "" ? "platform=" + platformValue : ""
-      }&${genreValue != "" ? "category=" + genreValue : ""}&${
-        sortByValue != "" ? "sort-by=" + sortByValue : ""
-      }`
-    )
-      .then((res) => res.json())
-      .then((data) => setAllGames(data))
-      .catch((err) => console.log("All Games Fetch", err));
-  }, [platformValue, genreValue, sortByValue]);
-
-  useEffect(() => {
     const filtered = allGames.filter((item) =>
       item.title.toLowerCase().includes(userInput.toLowerCase())
     );

@@ -14,14 +14,8 @@ import { useContext, useEffect } from "react";
 const Home = () => {
   const { allGames } = useContext(AllGamesFetch);
   const { recentlyFetch, setRecentlyFetch } = useContext(Recently);
-  const { userInput } = useContext(UserInput);
+  const { userInput, setUserInput } = useContext(UserInput);
   const { searchedGames, setSearchedGames } = useContext(SearchedGames);
-  useEffect(() => {
-    fetch("https://www.freetogame.com/api/games?sort-by=release-date")
-      .then((respo) => respo.json())
-      .then((allData) => setRecentlyFetch(allData))
-      .catch((err) => console.error("Fehler in Recently-Fetch", err));
-  }, []);
 
   useEffect(() => {
     const filtered = allGames.filter((item) =>
@@ -29,6 +23,8 @@ const Home = () => {
     );
     setSearchedGames(filtered);
   }, [allGames, userInput]);
+
+  console.log(allGames);
 
   return (
     <>

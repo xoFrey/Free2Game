@@ -2,7 +2,14 @@ import { Link } from "react-router-dom";
 import "./CardVertical.css";
 import { useContext, useState } from "react";
 import { GenreValue, PlatformValue } from "../Context/Context";
-const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, platform }) => {
+const CardVertical = ({
+  thumbnail,
+  gameTitle,
+  shortDescription,
+  link,
+  tags,
+  platform,
+}) => {
   // const [isFav, setIsFav] = useState(false);
 
   const { genreValueItem } = useContext(GenreValue);
@@ -13,7 +20,6 @@ const CardVertical = ({ thumbnail, gameTitle, shortDescription, link, tags, plat
         <h3>{gameTitle}</h3>
         <p>{shortDescription}</p>
         <div className="fav">
-          {console.log(link)}
           <Link to={`/details/${link}`}>
             <button className="solid-button">Read more</button>
           </Link>
