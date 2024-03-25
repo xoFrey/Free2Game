@@ -11,7 +11,6 @@ const TopGamesPC = () => {
       .then((apiData) => setTopGameData(apiData))
       .catch((error) => console.log("Error in TopGamesPC.jsx fetch", error));
   }, []);
-  console.log(topGameData);
 
   return (
     <section className="pc">

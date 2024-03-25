@@ -1,7 +1,14 @@
+.recently-added {
+  margin-inline: 3vw;
+}
+/* --- evtl. wegmachen */
+.recently-added article {
+  margin-top: 1.25rem;
+}
 .recently-added article {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 1.875rem;
 }

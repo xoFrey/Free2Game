@@ -13,10 +13,8 @@ const Home = () => {
       .then((respo) => respo.json())
       .then((allData) => setRecentlyFetch(allData))
       .catch((err) => console.error("Fehler in Recently-Fetch", err));
-  }, [recentlyFetch]);
+  }, []);
 
-
-  
   return (
     <section className="home">
       <section className="home_title">
