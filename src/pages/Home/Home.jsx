@@ -10,7 +10,7 @@ import {
   UserInput,
 } from "../../components/Context/Context";
 import { useContext, useEffect } from "react";
-import BackToTop from "../../components/backToTop/BackToTop";
+import BackToTop from "../../components/BackToTop/BackToTop";
 
 const Home = () => {
   const { allGames } = useContext(AllGamesFetch);
@@ -38,7 +38,6 @@ const Home = () => {
     setSearchedGames(filtered);
   }, [allGames, userInput]);
 
-
   return (
     <>
       <section className="home">
@@ -51,14 +50,6 @@ const Home = () => {
           <TopGamesBrowser />
         </div>
       </section>
-
-      <div className="home-wrapper">
-        <RecentlyComponent />
-        <TopGamesPC />
-        <TopGamesBrowser />
-        <BackToTop />
-      </div>
-    </section>
 
       {userInput != "" ? (
         <section className="suggestion">

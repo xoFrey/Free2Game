@@ -5,7 +5,7 @@ import Title from "../../components/Title/Title";
 import recentlyImage from "../../../public/img/RecentGames.jpg";
 import { useContext, useEffect, useState } from "react";
 import { Recently } from "../../components/Context/Context";
-import BackToTop from "../../components/backToTop/BackToTop";
+import BackToTop from "../../components/BackToTop/BackToTop";
 const RecentlyAdded = () => {
   const { recentlyFetch, setRecentlyFetch } = useContext(Recently);
   const [limit2, setLimit2] = useState(20);
@@ -34,7 +34,10 @@ const RecentlyAdded = () => {
         <button onClick={() => setLimit2(limit2 + 20)} className="solid-button">
           Load More
         </button>
-        <button onClick={() => setLimit2(recentlyFetch.length)} className="solid-button">
+        <button
+          onClick={() => setLimit2(recentlyFetch.length)}
+          className="solid-button"
+        >
           Show All
         </button>
       </div>
