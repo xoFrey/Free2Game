@@ -28,11 +28,11 @@ function App() {
   const [recentlyFetch, setRecentlyFetch] = useState();
   const [allGames, setAllGames] = useState([]);
   const [searchedGames, setSearchedGames] = useState("");
-  const [fetchTime, setFetchTime] = useState(false);
+  const [fetchTime, setFetchTime] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-      setFetchTime(true);
+      setFetchTime(false);
     }, 2000);
   });
 
@@ -48,12 +48,12 @@ function App() {
                     value={{ platformValue, setPlatformValue }}
                   >
                     <BrowserRouter>
-                      {fetchTime ? <FetchPage /> : ""}
                       <Navbar />
                       <Searchbar />
                       <div className="app">
+                        {fetchTime ? <FetchPage /> : ""}
                         <Routes>
-                          <Route path="/" element={<Home />} />
+                          <Route path="/home" element={<Home />} />
                           <Route path="/allgames" element={<AllGames />} />
                           <Route path="/recently" element={<RecentlyAdded />} />
                           <Route path="/details/:id" element={<Details />} />

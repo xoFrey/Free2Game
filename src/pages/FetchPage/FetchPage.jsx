@@ -1,3 +1,4 @@
+import "./FetchPage.css";
 import { useContext, useEffect } from "react";
 import {
   AllGamesFetch,
@@ -6,6 +7,7 @@ import {
   Recently,
   SortByValue,
 } from "../../components/Context/Context";
+import Loadingbar from "../../components/Loadingbar/Loadingbar";
 
 const FetchPage = () => {
   const { allGames, setAllGames } = useContext(AllGamesFetch);
@@ -38,7 +40,11 @@ const FetchPage = () => {
       .catch((err) => console.log("All Games Fetch", err));
   }, [platformValue, genreValue, sortByValue]);
 
-  return <></>;
+  return (
+    <>
+      <Loadingbar />
+    </>
+  );
 };
 
 export default FetchPage;

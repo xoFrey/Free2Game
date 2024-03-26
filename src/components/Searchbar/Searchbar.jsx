@@ -11,10 +11,10 @@ const Searchbar = ({ fold }) => {
   return (
     <>
       <section className="searchbar">
-        <Link to="/">
+        <Link to="/home">
           <div className={fold ? "slide" : ""}>
             <Logo />
-            <h2 className="logo-text">Free2Game</h2>
+            <h2 className="logo-text tracking-in-contract-bck">Free2Game</h2>
           </div>
         </Link>
         <div>
