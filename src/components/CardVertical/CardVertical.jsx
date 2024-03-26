@@ -4,6 +4,7 @@ import { LightMode } from "../Context/Context";
 
 import { useContext, useState } from "react";
 import { GenreValue, PlatformValue } from "../Context/Context";
+
 const CardVertical = ({
   thumbnail,
   gameTitle,
