@@ -61,3 +61,6 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.all-games .allgames-cards .card-content {
+  gap: 1.25rem;
+}

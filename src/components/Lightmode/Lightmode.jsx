@@ -8,24 +8,19 @@ const Lightmode = () => {
     document.documentElement.style.setProperty("--bg-black", "#040f14");
     document.documentElement.style.setProperty("--font-white", "#ffffff");
     document.documentElement.style.setProperty("--card-bg-blue", "#102130");
-    document.documentElement.style.setProperty(
-      "--accent-color-magenta",
-      "#ff4654"
-    );
+    document.documentElement.style.setProperty("--accent-color-magenta", "#ff4654");
     document.documentElement.style.setProperty("--lightBlue", "#afc7df");
     document.documentElement.style.setProperty("--darkBlue", "#375470");
+    document.documentElement.style.setProperty("--cardBorder", "#ffffff33");
   } else {
-
     document.documentElement.style.setProperty("--bg-black", "#D1E5F3");
 
     document.documentElement.style.setProperty("--font-white", "#040f14");
     document.documentElement.style.setProperty("--card-bg-blue", "#ffffff");
-    document.documentElement.style.setProperty(
-      "--accent-color-magenta",
-      "#ff4654"
-    );
+    document.documentElement.style.setProperty("--accent-color-magenta", "#ff4654");
     document.documentElement.style.setProperty("--lightBlue", "#1e344b");
     document.documentElement.style.setProperty("--darkBlue", "#ECF5FF");
+    document.documentElement.style.setProperty("--cardBorder", "#040f14");
   }
 
   return (

@@ -3,7 +3,7 @@
   flex-direction: column;
   border-radius: 1.5rem;
   overflow: hidden;
-  min-height: 520px;
+
   background-color: var(--card-bg-blue);
 }
 
@@ -24,7 +24,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  border-top: 0.125rem rgba(255, 255, 255, 0.2) solid;
+  border-top: 0.125rem var(--cardBorder) solid;
   padding-top: 1.5rem;
 }
 
