@@ -11,8 +11,14 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between
   height: 100%;
+}
+.card-content p {
+  color: var(--lightBlue);
+  padding-top: 1.5rem;
+  font-weight: 300;
+  height: 130px;
 }
 
 .card-vertical img {
@@ -27,16 +33,6 @@
   border-top: 0.125rem rgba(255, 255, 255, 0.2) solid;
   padding-top: 1.5rem;
   margin-top: 3rem;
-}
-
-.fav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.fav p {
-  cursor: pointer;
 }
 
 .tags-flex a {
