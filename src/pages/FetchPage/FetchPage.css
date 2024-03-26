@@ -5,6 +5,19 @@
     both;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.loading h1 {
+  margin-bottom: 20px;
+  font-size: 4rem;
+}
+
 @-webkit-keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;

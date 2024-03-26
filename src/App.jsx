@@ -28,12 +28,12 @@ function App() {
   const [recentlyFetch, setRecentlyFetch] = useState();
   const [allGames, setAllGames] = useState([]);
   const [searchedGames, setSearchedGames] = useState("");
-  const [fetchTime, setFetchTime] = useState(true);
+  const [fetchTime, setFetchTime] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setFetchTime(false);
-    }, 2000);
+      setFetchTime(true);
+    }, 2500);
   });
 
   return (
@@ -47,19 +47,26 @@ function App() {
                   <PlatformValue.Provider
                     value={{ platformValue, setPlatformValue }}
                   >
-                    <BrowserRouter>
-                      <Navbar />
-                      <Searchbar />
-                      <div className="app">
-                        {fetchTime ? <FetchPage /> : ""}
-                        <Routes>
-                          <Route path="/home" element={<Home />} />
-                          <Route path="/allgames" element={<AllGames />} />
-                          <Route path="/recently" element={<RecentlyAdded />} />
-                          <Route path="/details/:id" element={<Details />} />
-                        </Routes>
-                      </div>
-                    </BrowserRouter>
+                    {" "}
+                    {fetchTime ? (
+                      <BrowserRouter>
+                        <Navbar />
+                        <Searchbar />
+                        <div className="app">
+                          <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/allgames" element={<AllGames />} />
+                            <Route
+                              path="/recently"
+                              element={<RecentlyAdded />}
+                            />
+                            <Route path="/details/:id" element={<Details />} />
+                          </Routes>
+                        </div>
+                      </BrowserRouter>
+                    ) : (
+                      <FetchPage />
+                    )}
                   </PlatformValue.Provider>
                 </SortByValue.Provider>
               </GenreValue.Provider>
