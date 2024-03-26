@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "./CardVertical.css";
-import { LightMode } from "../Context/Context";
+import { Favorites, LightMode } from "../Context/Context";
 
 import { useContext, useState } from "react";
 import { GenreValue, PlatformValue } from "../Context/Context";
+import HeartIcon from "../../assets/svg/HeartIcon";
+import HeartFilled from "../../assets/svg/HeartFilled";
 const CardVertical = ({
   thumbnail,
   gameTitle,
@@ -11,11 +13,13 @@ const CardVertical = ({
   id,
   tags,
   platform,
+  fav,
 }) => {
   // const [isFav, setIsFav] = useState(false);
 
   const { genreValue, setGenreValue } = useContext(GenreValue);
   const { lightDark, setLightDark } = useContext(LightMode);
+  const { isFav, setIsFav } = useContext(Favorites);
 
   return (
     <section className="card-vertical">
@@ -27,13 +31,7 @@ const CardVertical = ({
           <Link to={id}>
             <button className="solid-button">Read more</button>
           </Link>
-          {/* <p
-            onClick={() => {
-              setIsFav(!isFav), fav;
-            }}
-          >
-            ♥
-          </p> */}
+          <p onClick={fav}>{isFav ? <HeartFilled /> : <HeartIcon />}</p>
         </div>
         <div className="tags-flex">
           <Link to="/allgames">

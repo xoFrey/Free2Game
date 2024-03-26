@@ -16,6 +16,7 @@ import {
   Recently,
   AllGamesFetch,
   SearchedGames,
+  Favorites,
 } from "./components/Context/Context";
 import FetchPage from "./pages/FetchPage/FetchPage";
 
@@ -29,6 +30,7 @@ function App() {
   const [allGames, setAllGames] = useState([]);
   const [searchedGames, setSearchedGames] = useState("");
   const [fetchTime, setFetchTime] = useState(false);
+  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,37 +39,42 @@ function App() {
   });
 
   return (
-    <SearchedGames.Provider value={{ searchedGames, setSearchedGames }}>
-      <AllGamesFetch.Provider value={{ allGames, setAllGames }}>
-        <Recently.Provider value={{ recentlyFetch, setRecentlyFetch }}>
-          <LightMode.Provider value={{ lightDark, setLightDark }}>
-            <UserInput.Provider value={{ userInput, setUserInput }}>
-              <GenreValue.Provider value={{ genreValue, setGenreValue }}>
-                <SortByValue.Provider value={{ sortByValue, setSortByValue }}>
-                  <PlatformValue.Provider
-                    value={{ platformValue, setPlatformValue }}
-                  >
-                    <BrowserRouter>
-                      {fetchTime ? <FetchPage /> : ""}
-                      <Navbar />
-                      <Searchbar />
-                      <div className="app">
-                        <Routes>
-                          <Route path="/" element={<Home />} />
-                          <Route path="/allgames" element={<AllGames />} />
-                          <Route path="/recently" element={<RecentlyAdded />} />
-                          <Route path="/details/:id" element={<Details />} />
-                        </Routes>
-                      </div>
-                    </BrowserRouter>
-                  </PlatformValue.Provider>
-                </SortByValue.Provider>
-              </GenreValue.Provider>
-            </UserInput.Provider>
-          </LightMode.Provider>
-        </Recently.Provider>
-      </AllGamesFetch.Provider>
-    </SearchedGames.Provider>
+    <Favorites.Provider value={{ isFav, setIsFav }}>
+      <SearchedGames.Provider value={{ searchedGames, setSearchedGames }}>
+        <AllGamesFetch.Provider value={{ allGames, setAllGames }}>
+          <Recently.Provider value={{ recentlyFetch, setRecentlyFetch }}>
+            <LightMode.Provider value={{ lightDark, setLightDark }}>
+              <UserInput.Provider value={{ userInput, setUserInput }}>
+                <GenreValue.Provider value={{ genreValue, setGenreValue }}>
+                  <SortByValue.Provider value={{ sortByValue, setSortByValue }}>
+                    <PlatformValue.Provider
+                      value={{ platformValue, setPlatformValue }}
+                    >
+                      <BrowserRouter>
+                        {fetchTime ? <FetchPage /> : ""}
+                        <Navbar />
+                        <Searchbar />
+                        <div className="app">
+                          <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/allgames" element={<AllGames />} />
+                            <Route
+                              path="/recently"
+                              element={<RecentlyAdded />}
+                            />
+                            <Route path="/details/:id" element={<Details />} />
+                          </Routes>
+                        </div>
+                      </BrowserRouter>
+                    </PlatformValue.Provider>
+                  </SortByValue.Provider>
+                </GenreValue.Provider>
+              </UserInput.Provider>
+            </LightMode.Provider>
+          </Recently.Provider>
+        </AllGamesFetch.Provider>
+      </SearchedGames.Provider>
+    </Favorites.Provider>
   );
 }
 
