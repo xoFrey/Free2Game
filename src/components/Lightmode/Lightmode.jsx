@@ -12,13 +12,12 @@ const Lightmode = () => {
     document.documentElement.style.setProperty("--lightBlue", "#afc7df");
     document.documentElement.style.setProperty("--darkBlue", "#375470");
   } else {
-
-    document.documentElement.style.setProperty("--bg-black", "#F2F6F7");
+    document.documentElement.style.setProperty("--bg-black", "#D1E5F3");
     document.documentElement.style.setProperty("--font-white", "#040f14");
     document.documentElement.style.setProperty("--card-bg-blue", "#ffffff");
     document.documentElement.style.setProperty("--accent-color-magenta", "#ff828b");
     document.documentElement.style.setProperty("--lightBlue", "#1e344b");
-    document.documentElement.style.setProperty("--darkBlue", "#d4e6f8");
+    document.documentElement.style.setProperty("--darkBlue", "#ECF5FF");
   }
 
   return (
