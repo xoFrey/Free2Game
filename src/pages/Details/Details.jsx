@@ -20,14 +20,15 @@ const Details = () => {
 
   // ---link to game
   const linkToGame = () => {
-    window.location.href = `${singleGame.game_url}`;
+    window.open(`${singleGame.game_url}`, "_blank");
   };
+  console.log(singleGame);
   // ========== RENDERING ==========
   return (
     <section className="details">
       {singleGame ? (
         <>
-          <Title backgroundImage={singleGame.screenshots[0].image} />
+          <Title backgroundImage={singleGame.screenshots[0]?.image} />
 
           <h2>{singleGame.title}</h2>
           <div className="details__game-info">
