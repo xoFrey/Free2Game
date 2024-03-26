@@ -21,3 +21,10 @@
   padding-left: 5rem;
   color: white;
 }
+
+@media (min-width: 320px) and (max-width: 650px) {
+  .home_title h1 {
+    padding-inline: 2vw;
+    width: 13ch;
+  }
+}

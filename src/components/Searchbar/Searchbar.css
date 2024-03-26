@@ -50,3 +50,34 @@
   margin-left: 16.25rem;
   height: 500px;
 }
+
+@media (min-width: 320px) and (max-width: 650px) {
+  .logo-text {
+    display: none;
+  }
+
+  .slide {
+    margin-left: 0px;
+  }
+
+  #search {
+    width: 70px;
+    transition: 1s;
+  }
+
+  .searchbar {
+    justify-content: end;
+
+    width: 70vw;
+    gap: 12px;
+  }
+
+  #search:focus {
+    width: 200px;
+  }
+
+  .searchbar a div svg {
+    position: fixed;
+    left: 80px;
+  }
+}

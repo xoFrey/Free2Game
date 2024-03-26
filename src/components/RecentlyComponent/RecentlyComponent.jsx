@@ -26,6 +26,7 @@ const RecentlyComponent = () => {
                 tags={singleRecently.genre}
                 platform={singleRecently.platform}
                 link={singleRecently.id}
+                fav={() => setIsFav(!isFav)}
               />
             ))
         ) : (

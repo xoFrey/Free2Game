@@ -52,7 +52,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 /* :Hide and Show when clicked */
@@ -64,4 +64,58 @@ nav {
   display: flex;
   flex-direction: column;
   width: 16.25rem;
+}
+
+.mobile-nav {
+  position: relative;
+  display: none;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background-color: var(--bg-black);
+  width: 100vw;
+  border-right: 2px solid white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1.5rem;
+  padding-top: 50px;
+  z-index: 5;
+}
+
+.mobile-menu p {
+  width: 300px;
+}
+
+.mobileHide {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  transition: 1s;
+}
+
+.mobileShow {
+  position: fixed;
+  top: 70px;
+  left: -101vw;
+  transition: 1s;
+}
+
+@media (min-width: 320px) and (max-width: 650px) {
+  .navbar {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .burger {
+    position: fixed;
+  }
 }

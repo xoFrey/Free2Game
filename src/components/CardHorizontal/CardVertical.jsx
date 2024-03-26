@@ -13,8 +13,6 @@ const CardVertical = ({
   tags,
   platform,
 }) => {
-  // const [isFav, setIsFav] = useState(false);
-
   const { genreValue, setGenreValue } = useContext(GenreValue);
   const { lightDark, setLightDark } = useContext(LightMode);
 
@@ -28,13 +26,6 @@ const CardVertical = ({
           <Link to={id}>
             <button className="solid-button">Read more</button>
           </Link>
-          {/* <p
-            onClick={() => {
-              setIsFav(!isFav), fav;
-            }}
-          >
-            ♥
-          </p> */}
         </div>
         <div className="tags-flex">
           <Link to="/allgames">
