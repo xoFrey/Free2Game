@@ -10,13 +10,14 @@
 
 .card-horizontal-rank-wrapper {
   position: relative;
-  top: -32%;
+  top: -39%;
   left: -48.5%;
 }
 
 .card-horizontal-content {
   display: flex;
   flex-direction: column;
+  gap: 0.8125rem;
 }
 
 .card-horizontal img {

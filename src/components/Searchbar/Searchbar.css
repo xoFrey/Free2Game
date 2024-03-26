@@ -48,6 +48,7 @@
 
 .slide {
   margin-left: 16.25rem;
+  height: 500px;
 }
 
 @media (min-width: 320px) and (max-width: 650px) {

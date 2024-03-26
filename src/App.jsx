@@ -48,12 +48,12 @@ function App() {
                     value={{ platformValue, setPlatformValue }}
                   >
                     <BrowserRouter>
-                      {fetchTime ? <FetchPage /> : ""}
                       <Navbar />
                       <Searchbar />
                       <div className="app">
+                        {fetchTime ? <FetchPage /> : ""}
                         <Routes>
-                          <Route path="/" element={<Home />} />
+                          <Route path="/home" element={<Home />} />
                           <Route path="/allgames" element={<AllGames />} />
                           <Route path="/recently" element={<RecentlyAdded />} />
                           <Route path="/details/:id" element={<Details />} />

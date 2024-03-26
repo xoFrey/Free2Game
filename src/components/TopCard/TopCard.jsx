@@ -3,7 +3,7 @@ import "./TopCard.css";
 import TopGamesRank from "../TopGamesPC/TopGamesRank";
 import { useContext } from "react";
 import { GenreValue } from "../Context/Context";
-const TopCard = ({ gameTitle, id, tags, imgURL }) => {
+const TopCard = ({ gameTitle, id, tags, platform }) => {
   const { setGenreValue } = useContext(GenreValue);
   return (
     <section className="top-card-content">

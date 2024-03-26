@@ -26,7 +26,7 @@ const Navbar = () => {
           <ExitButton setFold={() => setFold((fold) => !fold)} />
         </div>
         <nav>
-          <NavLink to="/">
+          <NavLink to="/home">
             <p className="navleiste">
               <HomeIcon />
               <span className={fold ? "show" : "hide"}>Home</span>
