@@ -25,25 +25,11 @@ const FetchPage = () => {
       .catch((err) => console.error("Fehler in Recently-Fetch", err));
   }, []);
 
-  // *All Games
-
-  useEffect(() => {
-    fetch(
-      `https://www.freetogame.com/api/games?${
-        platformValue != "" ? "platform=" + platformValue : ""
-      }&${genreValue != "" ? "category=" + genreValue : ""}&${
-        sortByValue != "" ? "sort-by=" + sortByValue : ""
-      }`
-    )
-      .then((res) => res.json())
-      .then((data) => setAllGames(data))
-      .catch((err) => console.log("All Games Fetch", err));
-  }, [platformValue, genreValue, sortByValue]);
-
   return (
-    <>
+    <section className="loading">
+      <h1 className="tracking-in-contract-bck">Free2Game</h1>
       <Loadingbar />
-    </>
+    </section>
   );
 };
 

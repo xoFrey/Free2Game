@@ -31,7 +31,7 @@ const CardVertical = ({
           <Link to="/allgames">
             <p onClick={() => setGenreValue(tags)}>{tags}</p>
           </Link>
-          <a href="#" className="card-tags">
+          <Link to="/allgames" className="card-tags">
             {platform === "PC (Windows)" ? (
               <svg
                 width="16"
@@ -80,7 +80,7 @@ const CardVertical = ({
                 />
               </svg>
             )}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -4,7 +4,13 @@ import { useContext, useEffect, useState } from "react";
 import CheckboxEmpty from "../../assets/svg/CheckboxEmpty";
 import CheckboxChecked from "./../../assets/svg/CheckboxChecked";
 import XButton from "../../assets/svg/XButton";
-import { GenreValue, LightMode, PlatformValue, SortByValue } from "../Context/Context";
+import {
+  AllGamesFetch,
+  GenreValue,
+  LightMode,
+  PlatformValue,
+  SortByValue,
+} from "../Context/Context";
 const Filter = ({ allGames }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +32,9 @@ const Filter = ({ allGames }) => {
           genreArray.push(item.genre);
         })
       : "";
-    const genre = genreArray.filter((item, index) => genreArray.indexOf(item) === index);
+    const genre = genreArray.filter(
+      (item, index) => genreArray.indexOf(item) === index
+    );
     setGenreList(genre);
   }, [allGames]);
 
@@ -34,12 +42,22 @@ const Filter = ({ allGames }) => {
     <div>
       <section className="hauptfilter">
         <section className="filter">
-          <div className="filter-headline" onClick={() => setFilterValue("platform")}>
+          <div
+            className="filter-headline"
+            onClick={() => setFilterValue("platform")}
+          >
             <h3>Platform</h3>
-            <ArrowIcon setIsOpen={() => setIsOpen(!isOpen)} className={isOpen && filterValue == "platform" ? "arrowUp" : ""} />
+            <ArrowIcon
+              setIsOpen={() => setIsOpen(!isOpen)}
+              className={isOpen && filterValue == "platform" ? "arrowUp" : ""}
+            />
           </div>
 
-          <div className={`filter-list ${isOpen && filterValue == "platform" ? "is-open" : "is-closed"}`}>
+          <div
+            className={`filter-list ${
+              isOpen && filterValue == "platform" ? "is-open" : "is-closed"
+            }`}
+          >
             {platformArray.map((item, index) => (
               <div
                 key={index}
@@ -48,7 +66,11 @@ const Filter = ({ allGames }) => {
                 }}
                 className="filter-items"
               >
-                {platformValue === `${item}` ? <CheckboxChecked /> : <CheckboxEmpty />}
+                {platformValue === `${item}` ? (
+                  <CheckboxChecked />
+                ) : (
+                  <CheckboxEmpty />
+                )}
                 <h3>{item}</h3>
               </div>
             ))}
@@ -56,12 +78,22 @@ const Filter = ({ allGames }) => {
         </section>
 
         <section className="filter">
-          <div className="filter-headline" onClick={() => setFilterValue("genre")}>
+          <div
+            className="filter-headline"
+            onClick={() => setFilterValue("genre")}
+          >
             <h3>Genre/Tags</h3>
-            <ArrowIcon setIsOpen={() => setIsOpen(!isOpen)} className={isOpen && filterValue === "genre" ? "arrowUp" : ""} />
+            <ArrowIcon
+              setIsOpen={() => setIsOpen(!isOpen)}
+              className={isOpen && filterValue === "genre" ? "arrowUp" : ""}
+            />
           </div>
 
-          <div className={`filter-list ${isOpen && filterValue === "genre" ? "is-open" : "is-closed"}`}>
+          <div
+            className={`filter-list ${
+              isOpen && filterValue === "genre" ? "is-open" : "is-closed"
+            }`}
+          >
             {genreList.map((item, index) => (
               <div
                 key={index}
@@ -70,7 +102,11 @@ const Filter = ({ allGames }) => {
                 }}
                 className="filter-items"
               >
-                {genreValue === `${item}` ? <CheckboxChecked /> : <CheckboxEmpty />}
+                {genreValue === `${item}` ? (
+                  <CheckboxChecked />
+                ) : (
+                  <CheckboxEmpty />
+                )}
                 <h3>{item}</h3>
               </div>
             ))}
@@ -78,12 +114,22 @@ const Filter = ({ allGames }) => {
         </section>
 
         <section className="filter">
-          <div className="filter-headline" onClick={() => setFilterValue("sort-by")}>
+          <div
+            className="filter-headline"
+            onClick={() => setFilterValue("sort-by")}
+          >
             <h3>Sort By</h3>
-            <ArrowIcon setIsOpen={() => setIsOpen(!isOpen)} className={isOpen && filterValue === "sort-by" ? "arrowUp" : ""} />
+            <ArrowIcon
+              setIsOpen={() => setIsOpen(!isOpen)}
+              className={isOpen && filterValue === "sort-by" ? "arrowUp" : ""}
+            />
           </div>
 
-          <div className={`filter-list ${isOpen && filterValue === "sort-by" ? "is-open" : "is-closed"}`}>
+          <div
+            className={`filter-list ${
+              isOpen && filterValue === "sort-by" ? "is-open" : "is-closed"
+            }`}
+          >
             {sortByArray.map((item, index) => (
               <div
                 key={index}
@@ -92,7 +138,11 @@ const Filter = ({ allGames }) => {
                 }}
                 className="filter-items"
               >
-                {genreValue === `${item}` ? <CheckboxChecked /> : <CheckboxEmpty />}
+                {genreValue === `${item}` ? (
+                  <CheckboxChecked />
+                ) : (
+                  <CheckboxEmpty />
+                )}
                 <h3>{item}</h3>
               </div>
             ))}

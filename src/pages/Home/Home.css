@@ -24,7 +24,8 @@
 
 @media (min-width: 320px) and (max-width: 650px) {
   .home_title h1 {
-    padding-inline: 2vw;
+    padding-inline: 3vw;
     width: 13ch;
+    margin-left: 1.875rem;
   }
 }
