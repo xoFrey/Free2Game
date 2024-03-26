@@ -5,19 +5,18 @@
   background-color: var(--card-bg-blue);
   border-radius: 1.5rem;
   overflow: hidden;
-  height: 22vh;
+  height: 24vh;
 }
 
 .card-horizontal-rank-wrapper {
   position: relative;
-  top: -35%;
-  left: -47%;
+  top: -32%;
+  left: -48.5%;
 }
 
 .card-horizontal-content {
   display: flex;
   flex-direction: column;
-  padding: 0rem 2.25rem;
 }
 
 .card-horizontal img {

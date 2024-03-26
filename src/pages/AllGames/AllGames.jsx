@@ -5,8 +5,13 @@ import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
 import allGamesImage from "../../../public/img/allGames.jpg";
 
-
-import { GenreValue, PlatformValue, UserInput, AllGamesFetch, SearchedGames } from "../../components/Context/Context";
+import {
+  GenreValue,
+  PlatformValue,
+  UserInput,
+  AllGamesFetch,
+  SearchedGames,
+} from "../../components/Context/Context";
 
 import { SortByValue } from "./../../components/Context/Context";
 import { Link } from "react-router-dom";
@@ -22,17 +27,11 @@ const AllGames = () => {
   const { userInput, setUserInput } = useContext(UserInput);
 
   useEffect(() => {
-
     const filtered = allGames.filter((item) =>
       item.title.toLowerCase().includes(userInput.toLowerCase())
     );
     setSearchedGames(filtered);
   }, [allGames, userInput]);
-
-  const [genreArray, setGenreArray] = useState(genreValue);
-  useEffect(() => {
-    setGenreArray([...genreArray, genreValue]);
-  }, [genreValue]);
 
   return (
     <>
@@ -48,6 +47,7 @@ const AllGames = () => {
                   thumbnail={item.thumbnail}
                   gameTitle={item.title}
                   tags={item.genre}
+                  id={`/details/${item.id}`}
                   // fav={setFavorites([...favorites, item])}
                 />
               ))}
@@ -70,10 +70,12 @@ const AllGames = () => {
         ) : (
           <div className="allgames-cards">
             {searchedGames.map((item) => (
-
               <div>
-                <CardVertical thumbnail={item.thumbnail} gameTitle={item.title} tags={item.genre} />
-
+                <CardVertical
+                  thumbnail={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                />
               </div>
             ))}
           </div>
