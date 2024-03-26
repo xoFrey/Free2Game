@@ -22,12 +22,17 @@ const TopGamesPC = () => {
               className="top-card"
               key={index}
               style={{
-                backgroundImage: `url(${item.thumbnail})`,
+                backgroundImage: `url(https://www.freetogame.com/g/475/genshin-impact-1.jpg)`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
             >
-              <TopCard gameTitle={item.title} imgURL={item.thumbnail} tags={item.genre} id={`/details/${item.id}`} />
+              <TopCard
+                gameTitle={item.title}
+                imgURL="https://www.freetogame.com/g/475/genshin-impact-1.jpg"
+                tags={item.genre}
+                id={`/details/${item.id}`}
+              />
             </div>
           ))
         ) : (
@@ -38,7 +43,14 @@ const TopGamesPC = () => {
           {topGameData ? (
             topGameData.slice(1, 4).map((item, index) => (
               <div key={index}>
-                <CardHorizontal imgURL={item.thumbnail} gameTitle={item.title} tags={item.genre} rankIndex={index + 2} platform={item.platform} />
+                <CardHorizontal
+                  imgURL={item.thumbnail}
+                  gameTitle={item.title}
+                  tags={item.genre}
+                  rankIndex={index + 2}
+                  platform={item.platform}
+                  id={`/details/${item.id}`}
+                />
               </div>
             ))
           ) : (
