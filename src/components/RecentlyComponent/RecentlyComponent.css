@@ -1,7 +1,7 @@
 .recently-component-content {
   margin-bottom: 6rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1.5rem;
 }
 
@@ -11,4 +11,10 @@
 }
 .recently-component h2 {
   margin-bottom: 3rem;
+}
+
+.recently-component .recently-component-content .card-content > p:first-of-type {
+  color: var(--lightBlue);
+  padding-top: 1rem;
+  font-weight: 300;
 }
