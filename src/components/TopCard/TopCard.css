@@ -5,3 +5,7 @@
 .top-card-rank-wrapper {
   padding-left: 90%;
 }
+
+.top-card-tags-flex span {
+  cursor: pointer;
+}
