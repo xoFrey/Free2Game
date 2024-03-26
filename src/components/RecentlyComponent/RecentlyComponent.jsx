@@ -18,7 +18,11 @@ const RecentlyComponent = () => {
                 thumbnail={singleRecently.thumbnail}
                 alt={singleRecently.item}
                 gameTitle={singleRecently.title}
-                shortDescription={singleRecently.short_description}
+                shortDescription={
+                  singleRecently.short_description.length > 60
+                    ? singleRecently.short_description.substring(0, 60 - 3) + "..."
+                    : singleRecently.short_description
+                }
                 tags={singleRecently.genre}
                 platform={singleRecently.platform}
                 link={singleRecently.id}
