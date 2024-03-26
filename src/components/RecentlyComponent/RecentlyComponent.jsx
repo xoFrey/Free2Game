@@ -1,10 +1,9 @@
 import "./RecentlyComponent.css";
 import CardVertical from "./../CardVertical/CardVertical";
-import { Favorites, Recently } from "../../components/Context/Context";
+import { Recently } from "../../components/Context/Context";
 import { useContext } from "react";
 const RecentlyComponent = () => {
   const { recentlyFetch, setRecentlyFetch } = useContext(Recently);
-  const { isFav, setIsFav } = useContext(Favorites);
 
   return (
     <section className="recently-component">

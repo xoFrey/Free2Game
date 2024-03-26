@@ -132,6 +132,7 @@
   .details__game-info {
     flex-direction: column;
     gap: 2vw;
+    align-items: center;
   }
   .detail__left {
     margin-left: -1rem;

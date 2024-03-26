@@ -12,3 +12,9 @@
   flex-wrap: wrap;
   gap: 1.875rem;
 }
+
+@media (min-width: 320px) and (max-width: 650px) {
+  .allGames-title h1 {
+    padding-left: 2vw;
+  }
+}

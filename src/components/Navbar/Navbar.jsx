@@ -11,8 +11,10 @@ import { LightMode } from "../Context/Context";
 
 const Navbar = () => {
   // global lightdark mode state
-  const { lightDark } = useContext(LightMode);
+
   const [fold, setFold] = useState(false);
+  const [mobileShow, setMobileShow] = useState(false);
+
   return (
     <>
       <Searchbar fold={fold} />
@@ -43,6 +45,33 @@ const Navbar = () => {
             </p>
           </NavLink>
         </nav>
+      </section>
+      <section className="mobile-nav">
+        <div className="burger">
+          <Burgermenu setFold={() => setMobileShow(!mobileShow)} />
+        </div>
+        <div
+          className={`mobile-menu ${mobileShow ? "mobileHide" : "mobileShow"}`}
+        >
+          <NavLink to="/">
+            <p className="navleiste">
+              <HomeIcon />
+              Home
+            </p>
+          </NavLink>
+          <NavLink to="/allgames">
+            <p className="navleiste">
+              <GamesIcon />
+              All Games
+            </p>
+          </NavLink>
+          <NavLink to="/recently">
+            <p className="navleiste">
+              <RecentlyIcon />
+              Recently Added
+            </p>
+          </NavLink>
+        </div>
       </section>
     </>
   );
