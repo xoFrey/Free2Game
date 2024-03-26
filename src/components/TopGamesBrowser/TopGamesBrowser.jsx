@@ -26,6 +26,7 @@ const TopGamesBrowser = () => {
                 gameTitle={singleTopBrow.title}
                 tags={singleTopBrow.genre}
                 platform={singleTopBrow.platform}
+                id={`/details/${singleTopBrow.id}`}
               />
             </div>
           ))
