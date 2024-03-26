@@ -1,30 +1,30 @@
 @font-face {
   font-family: Roboto;
   font-style: normal;
-  src: url(../public/fonts/Roboto-Bold.ttf);
+  src: url(/fonts/Roboto-Bold.ttf);
   font-weight: 400;
 }
 
 @font-face {
   font-family: Roboto;
   font-style: normal;
-  src: url(../public/fonts/Roboto-Regular.ttf);
+  src: url(/fonts/Roboto-Regular.ttf);
   font-weight: 800;
 }
 
 @font-face {
   font-family: Oswald;
-  src: url(../public/fonts/Oswald-Variable.ttf);
+  src: url(/fonts/Oswald-Variable.ttf);
 }
 
 @font-face {
   font-family: Titillium Web;
-  src: url(../public/fonts/TitilliumWeb-Regular.ttf);
+  src: url(/fonts/TitilliumWeb-Regular.ttf);
 }
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(../public/fonts/SourceSans3-Variable.ttf);
+  src: url(/fonts/SourceSans3-Variable.ttf);
 }
 
 * {

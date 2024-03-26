@@ -3,7 +3,7 @@
 }
 
 .top-card-rank-wrapper {
-  padding-left: 95%;
+  padding-left: 90%;
 }
 
 .top-card-tags-flex span {
@@ -15,4 +15,8 @@
 
 .top-card-content .solid-button {
   margin-bottom: 1.875rem;
+}
+
+.platform-tags {
+  background-color: var(--card-bg-blue);
 }

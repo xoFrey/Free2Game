@@ -32,6 +32,7 @@ const TopGamesPC = () => {
                 imgURL="https://www.freetogame.com/g/475/genshin-impact-1.jpg"
                 tags={item.genre}
                 id={`/details/${item.id}`}
+                platform={item.platform}
               />
             </div>
           ))

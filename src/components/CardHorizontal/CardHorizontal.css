@@ -6,12 +6,13 @@
   border-radius: 1.5rem;
   overflow: hidden;
   height: 24vh;
+  position: relative;
 }
 
 .card-horizontal-rank-wrapper {
-  position: relative;
-  top: -39%;
-  left: -48.5%;
+  position: absolute;
+  top: 5%;
+  left: 3%;
 }
 
 .card-horizontal-content {

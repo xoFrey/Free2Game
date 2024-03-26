@@ -11,15 +11,19 @@ const TopCard = ({ gameTitle, id, tags, platform }) => {
         <TopGamesRank rank="1" />
       </div>
       <h1>{gameTitle}</h1>
-      <Link to={`/details/${id}`}>
+      <Link to={id}>
         <button type="button" className="solid-button">
           Read More
         </button>
       </Link>
       <div className="top-card-tags-flex">
-        <span onClick={() => setGenreValue(tags)} className="card-tags">
+        <span
+          onClick={() => setGenreValue(tags)}
+          className="card-tags platform-tags"
+        >
           {tags}
         </span>
+        <span className="card-tags platform-tags">{platform}</span>
       </div>
     </section>
   );

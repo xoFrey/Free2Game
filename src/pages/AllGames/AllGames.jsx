@@ -3,7 +3,7 @@ import Filter from "./../../components/Filter/Filter";
 import CardVertical from "./../../components/CardVertical/CardVertical";
 import Title from "../../components/Title/Title";
 import { useContext, useEffect, useState } from "react";
-import allGamesImage from "../../../public/img/allGames.jpg";
+import allGamesImage from "/img/allGames.jpg";
 import {
   GenreValue,
   PlatformValue,

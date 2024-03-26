@@ -2,7 +2,7 @@ import "./RecentlyAdded.css";
 
 import CardVertical from "../../components/CardVertical/CardVertical";
 import Title from "../../components/Title/Title";
-import recentlyImage from "../../../public/img/RecentGames.jpg";
+import recentlyImage from "/img/RecentGames.jpg";
 import { useContext, useEffect, useState } from "react";
 import {
   Recently,

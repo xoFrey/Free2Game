@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import "./BackToTop.css";
+import { LightMode } from "../Context/Context";
 
 const BackToTop = () => {
   const scrollToTop = () => {
@@ -7,6 +9,8 @@ const BackToTop = () => {
       behavior: "smooth",
     });
   };
+
+  const { lightDark } = useContext(LightMode);
 
   return (
     <>
@@ -19,7 +23,7 @@ const BackToTop = () => {
         shapeRendering="geometricPrecision"
         textRendering="geometricPrecision"
         imageRendering="optimizeQuality"
-        fill="#FFFFFF"
+        fill={lightDark ? "black" : "white"}
         fillRule="evenodd"
         clipRule="evenodd"
         viewBox="0 0 512 266.77"
