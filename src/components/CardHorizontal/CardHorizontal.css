@@ -45,3 +45,9 @@
   text-transform: capitalize;
   margin-right: 0.4rem;
 }
+
+@media (min-width: 320px) and (max-width: 650px) {
+  .card-horizontal {
+    gap: 12px;
+  }
+}
