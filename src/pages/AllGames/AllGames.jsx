@@ -60,6 +60,7 @@ const AllGames = () => {
                   gameTitle={item.title}
                   tags={item.genre}
                   id={`/details/${item.id}`}
+                  platform={item.platform}
                   // fav={setFavorites([...favorites, item])}
                 />
               ))}
@@ -87,6 +88,7 @@ const AllGames = () => {
                   thumbnail={item.thumbnail}
                   gameTitle={item.title}
                   tags={item.genre}
+                  platform={item.platform}
                 />
               </div>
             ))}

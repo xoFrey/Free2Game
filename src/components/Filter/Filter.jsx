@@ -38,6 +38,8 @@ const Filter = ({ allGames }) => {
     setGenreList(genre);
   }, [allGames]);
 
+  console.log(sortByValue);
+
   return (
     <div>
       <section className="hauptfilter">
@@ -138,7 +140,7 @@ const Filter = ({ allGames }) => {
                 }}
                 className="filter-items"
               >
-                {sortByArray === `${item}` ? (
+                {sortByValue === `${item}` ? (
                   <CheckboxChecked />
                 ) : (
                   <CheckboxEmpty />
