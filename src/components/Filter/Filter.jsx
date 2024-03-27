@@ -138,7 +138,7 @@ const Filter = ({ allGames }) => {
                 }}
                 className="filter-items"
               >
-                {genreValue === `${item}` ? (
+                {sortByArray === `${item}` ? (
                   <CheckboxChecked />
                 ) : (
                   <CheckboxEmpty />
